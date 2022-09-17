@@ -3,13 +3,17 @@ html {
 	display: block;
 	height: 100%;
 }
+
 body {
 	padding: 0;
 	display: block;
 	height: 100%;
-	background-color: #0E141B;
+	background: #0E141B; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0E141B, #535960); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0E141B, #373a3e); 
 	margin: 0;
 }
+
 .wrapper {
 	display: flex;
 	padding: 0;
@@ -37,7 +41,7 @@ body {
 	border-radius: 1em;
 	width: 75%;
 	height:	100%;
-	background-color: #0E141B;
+	/*background-color: #0E141B;*/
 }
 #logo img{
 	padding-top: 3.5em;
@@ -46,4 +50,51 @@ body {
 	max-width: 60%;
 	height: auto;
 	width: auto;
+}
+
+.sign_button {
+	color: #1DB954;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 0.95em;
+	font-weight: 550;
+	display: flex;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.65em;
+	padding-bottom: 0.65em;
+	border: 1px solid  #233243;
+	border-radius: 0.75em ;
+	width: fit-content;
+	margin: 0.75em;
+	background-color: #233243;
+}
+.wrapper-top {
+	margin-top: 1.5em;
+	display: flex;
+	flex-wrap: wrap;
+}
+#cred-bar{
+	margin-left: auto;
+	width: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer {
+	background-color: #0E141B;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 3.5em;
+	margin: 0;
+	display: flex;
+}
+
+.footer-msg{
+	margin: auto;
+	text-align: center;
+	font-family:Arial, Helvetica, sans-serif;
+	color: #1DB954;
+	font-size: 0.95em;
 }
