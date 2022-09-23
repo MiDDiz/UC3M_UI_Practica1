@@ -39,7 +39,6 @@ body {
 
 .content {
 	/*border: 1px solid rgb(25, 168, 32);*/
-	display: flex;
 	margin-left:  2em;
 	margin-right: 0;
 	border-radius: 1em;
@@ -148,4 +147,46 @@ a {
 
 .policy-link a:visited {
 	color: #1DB954;
+}
+.covers{
+	display: grid;
+	grid-gap: 70px;
+	grid-template-columns: 200px 200px 200px 200px 200px;
+}
+
+.cover img{
+	padding-top: 3.5em;
+	display:block;
+    margin:auto;
+
+	height: 200px;
+	width: 200px;
+}
+
+.audio{
+	width: 200px;
+}
+
+.apartados{
+	display: grid;
+	grid-gap: 100px;
+	grid-template-rows: 300px 300px ;
+}
+
+.apartado{
+	color: #1DB954;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 2em;
+	font-weight: 550;
+}
+
+.space{
+	height: 50px;
+}
+
+.desc{
+	margin: auto;
+	text-align: center;
+	color: #1DB954;
+	font-size: 0.95em;
 }
