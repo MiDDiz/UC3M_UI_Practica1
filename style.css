@@ -58,7 +58,7 @@ body {
 
 
 .sign_button {
-	color: #1DB954;
+	color: #a98ed5;
 	font-size: 0.95em;
 	font-weight: 550;
 	display: flex;
@@ -66,11 +66,11 @@ body {
 	padding-right: 1em;
 	padding-top: 0.65em;
 	padding-bottom: 0.65em;
-	border: 1px solid  #233243;
+	border: 1px solid  #0d1014;
 	border-radius: 0.75em ;
 	width: fit-content;
 	margin: 0.75em;
-	background-color: #233243;
+	background-color: #1f262f;
 	min-width: fit-content;
 }
 .wrapper-top {
@@ -81,7 +81,14 @@ body {
 	width: 100%;
 }
 #cred-bar{
+	background-color: #0E141B;
+	position: fixed;
+	right: 0;
 	margin-left: auto;
+	margin-right: 1em;
+	border-radius: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
 	width: auto;
 	display: flex;
 	flex-wrap: wrap;
@@ -101,7 +108,7 @@ body {
 .footer-msg{
 	margin: auto;
 	text-align: center;
-	color: #1DB954;
+	color: #a98ed5;
 	font-size: 0.95em;
 }
 .options-wrapper{
@@ -143,12 +150,12 @@ body {
 }
 
 a {
-	color: #1DB954;
+	color: #a98ed5;
 	text-decoration: none;
 }
 
 .policy-link a:visited {
-	color: #1DB954;
+	color: #a98ed5;
 }
 .covers{
 	--gap: 32px;
@@ -180,6 +187,9 @@ a {
 	  --num-cols: 3;
 	  --row-height: 200px;
 	}
+	.audio {
+		transform: translate(200%, 200%);
+	}
   }
 
 /* Anything udner 1024px */
@@ -198,7 +208,7 @@ a {
 }
 
 .footer-padding {
-	position: absolute;
+	padding: 1em;
 }
 
 .cover {
@@ -218,7 +228,7 @@ a {
 	margin-right: auto;
 	width: 80px;
 	position: absolute;
-	transform: translate(100%, 170%);
+	transform: translate(70%, 120%);
 	z-index: 9;
 }
 
@@ -231,7 +241,7 @@ a {
 }
 
 .apartado_title{
-	color: #1DB954;
+	color: #a98ed5;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size: 2em;
 	font-weight: 550;
@@ -240,6 +250,6 @@ a {
 .desc{
 	margin: auto;
 	text-align: center;
-	color: #1DB954;
+	color: #a98ed5;
 	font-size: 0.95em;
 }
