@@ -7,7 +7,7 @@ html {
 
 body {
 	padding: 0;
-	display: block;
+	display: flex;
 	height: 100%;
 	background: #0E141B; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #0E141B, #535960); /* Chrome 10-25, Safari 5.1-6 */
@@ -15,37 +15,38 @@ body {
 	margin: 0;
 }
 
-.wrapper {
-	display: flex;
-	position: relative;
-	padding: 0;
-	width: 100%;
-	height:	92%;
-	margin: 0;
-	/*border: 1px solid rgb(0, 255, 255);*/
-	
-}
+
 .column {
 	/*border: 1px solid rgb(168, 25, 25);*/
-
 	border-top-right-radius: 2em;
 	display: flex;
-  flex-direction: column;
-
+	position: fixed;
+ 	flex-direction: column;
 	width: 25%;
-	height:	100%;
+	height:	92%;
 	background-color: #233243;
 }
 
 .content {
 	/*border: 1px solid rgb(25, 168, 32);*/
-	margin-left:  2em;
+	margin-left:  25%;
 	margin-right: 0;
 	border-radius: 1em;
 	width: 75%;
-	height:	100%;
+	height:	92%;
 	/*background-color: #0E141B;*/
 }
+
+.song-wrapper {
+	/*border: 1px solid rgb(25, 168, 32);*/
+	margin-left:  2em;
+	margin-right: 0;
+	border-radius: 1em;
+	width: 100%;
+	height: 88%;
+	/*background-color: #0E141B;*/
+}
+
 #logo img{
 	padding-top: 3.5em;
 	display:block;
@@ -54,6 +55,7 @@ body {
 	height: auto;
 	width: auto;
 }
+
 
 .sign_button {
 	color: #1DB954;
@@ -72,7 +74,7 @@ body {
 	min-width: fit-content;
 }
 .wrapper-top {
-	margin-top: 1.5em;
+	margin-top: 2%;
 	display: flex;
 	flex-wrap: wrap;
 	height: fit-content;
@@ -150,8 +152,8 @@ a {
 }
 .covers{
 	display: grid;
-	grid-gap: 70px;
-	grid-template-columns: 200px 200px 200px 200px 200px;
+	grid-gap: 2em;
+	grid-template-columns: 10em 10em 10em 10em 10em;
 }
 
 .cover img{
@@ -159,8 +161,12 @@ a {
 	display:block;
     margin:auto;
 
-	height: 200px;
-	width: 200px;
+	height: 60%;
+	width: 100%;
+}
+
+.footer-padding {
+	
 }
 
 .audio{
@@ -169,8 +175,8 @@ a {
 
 .apartados{
 	display: grid;
-	grid-gap: 100px;
-	grid-template-rows: 300px 300px ;
+	grid-gap: 7em;
+	grid-template-rows: 20em 20em ;
 }
 
 .apartado{
@@ -178,10 +184,6 @@ a {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size: 2em;
 	font-weight: 550;
-}
-
-.space{
-	height: 50px;
 }
 
 .desc{
