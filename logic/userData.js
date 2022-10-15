@@ -35,10 +35,16 @@ class UserData {
 				return (false);
 			}
 		}
-		if (!validateEmail())
+		if (!this.validateEmail())
 		{
 			alert("El email tiene que tener la forma de: correo@servicio.dominio\n")
 			return (false);
 		}
+		if(this.username == "logged")
+		{
+			alert("Este nombre de usuario no está disponible!");
+			return (false);
+		}
+		return (true);
 	}
 }

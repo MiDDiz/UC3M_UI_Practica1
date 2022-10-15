@@ -17,11 +17,13 @@ function addFunctionalities(hooks)
 
 	// on click open sing in formulary
 	hooks.buttons.sign_in.onclick = () => {
-		location.replace("./sing_in_form.html");
+		document.location.href = "./sing_in_form.html";
+		return ;
 	};
 
 	hooks.buttons.log_in.onclick = () => {
-		location.replace("./log_in_form.html")
+		document.location.href = "./log_in_form.html";
+		return ;
 	}
 }
 
