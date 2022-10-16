@@ -29,7 +29,7 @@ class UserData {
 
 	validatePasswd(){
 		const alphanumeric = /^[\p{L}\p{N}]*$/u;
-		return ((this.password.length <= 8) && (this.password.match(alphanumeric)));
+		return (( 0 < this.password.length && this.password.length <= 8) && (this.password.match(alphanumeric)));
 	}
 
 	validate (){

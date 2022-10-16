@@ -55,13 +55,17 @@ function closeSesion() {
 	location.reload();
 }
 
+function openPage(site) {
+	document.location.href = site;
+}
+
 function changeHeader(hooks) {
 	usr_img = "../images/usr_image.jpg";
 	console.log("changing header")
 	hooks.header.main.innerHTML = `<button class="usr_img_btn" onclick="dropUserMenu()"><img class="usr_img" src="${usr_img}"></button>
 	<div id="myDropdown" class="dropdown-content">
-		<button >Cuenta</button>
-		<button >Perfil</button>
+		<button onclick="openPage('../account.html')">Cuenta</button>
+		<button onclick="openPage('../profile.html')">Perfil</button>
 		<button onclick="closeSesion()">Cerrar Sesion</button>
   	</div>`;
 
