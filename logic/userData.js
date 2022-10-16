@@ -27,22 +27,32 @@ class UserData {
 		);
 	}
 
+	validatePasswd(){
+		const alphanumeric = /^[\p{L}\p{N}]*$/u;
+		return ((this.password.length <= 8) && (this.password.match(alphanumeric)));
+	}
+
 	validate (){
 		for (const [key, value] of Object.entries(this)){
 			if (value == "" && key != "usr_img")
 			{
-				alert(`El campo ${key} no puede estar vacío!`)
+				alert(`El campo ${key} no puede estar vacío!`);
 				return (false);
 			}
 		}
 		if (!this.validateEmail())
 		{
-			alert("El email tiene que tener la forma de: correo@servicio.dominio\n")
+			alert("El email tiene que tener la forma de: correo@servicio.dominio\n");
 			return (false);
 		}
 		if(this.username == "logged")
 		{
 			alert("Este nombre de usuario no está disponible!");
+			return (false);
+		}
+		if (!this.validatePasswd())
+		{
+			alert("La contraseña tiene un formato incorrecto!\nDebe tener MAXIMO 8 carácteres e incluir solo letras y dígitos.");
 			return (false);
 		}
 		return (true);

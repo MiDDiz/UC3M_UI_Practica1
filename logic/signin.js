@@ -18,22 +18,17 @@ button.onclick = () => {
 	var requestUserDatabase = localStorage.getItem(newUser.username);
 	if (requestUserDatabase == null)
 	{
-		console.log("this");
 		localStorage.setItem("logged", newUser.username);
 		localStorage.setItem(newUser.username, JSON.stringify(newUser));
-		console.log("Fumadota");
 		document.location.href = "../index.html";
-		console.log("Fumadita");
 	}
 	else 
 	{
-		console.log("that")
-
 		alert("Este nombre de usuario ya está utilizado!");
 		newUser = new UserData();
 	}
 }
-if (localStorage.getItem("logged") != null)
-{
+
+if (localStorage.getItem("logged") != null) {
 	document.location.href = "../index.html";
 }

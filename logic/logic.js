@@ -5,6 +5,9 @@ function addHooks()
 		buttons:{
 			sign_in:document.getElementById("sign_in"),
 			log_in:document.getElementById("log_in")
+		},
+		header:{
+			main:document.getElementById("cred-bar")
 		}
 	}
 	console.log("Hooks Attatched")
@@ -27,10 +30,54 @@ function addFunctionalities(hooks)
 	}
 }
 
+function dropUserMenu() {
+	console.log("dropping down")
+	document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+	if (!event.target.matches('.usr_img')) {
+		console.log("NOT TOGGLING")
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+			}
+		}
+	}
+	console.log("Matches: " + event.target.classList)
+} 
+
+function closeSesion() {
+	localStorage.removeItem("logged")
+	location.reload();
+}
+
+function changeHeader(hooks) {
+	usr_img = "../images/usr_image.jpg";
+	console.log("changing header")
+	hooks.header.main.innerHTML = `<button class="usr_img_btn" onclick="dropUserMenu()"><img class="usr_img" src="${usr_img}"></button>
+	<div id="myDropdown" class="dropdown-content">
+		<button >Cuenta</button>
+		<button >Perfil</button>
+		<button onclick="closeSesion()">Cerrar Sesion</button>
+  	</div>`;
+
+}
+
+function checkForLogin(hooks){
+	// if we are logged in
+	if (localStorage.getItem("logged") != null) {
+		changeHeader(hooks);
+	}
+}
+
 function init()
 {
 	hooks = addHooks();
 	addFunctionalities(hooks);
-	console.log("hi");
+	checkForLogin(hooks);
 }
 init();

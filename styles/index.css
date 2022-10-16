@@ -58,6 +58,7 @@ body {
 
 
 .sign_button {
+	cursor: pointer;
 	color: #a98ed5;
 	font-size: 0.95em;
 	font-weight: 550;
@@ -226,6 +227,7 @@ a {
 
 .cover:hover > .audio {
 	opacity: 100%;
+	z-index: 2;
 }
 
 .cover:hover + .desc {
@@ -241,7 +243,7 @@ a {
 	width: 80px;
 	position: absolute;
 	transform: translate(70%, 120%);
-	z-index: 9;
+	z-index: 1;
 }
 
 .apartados{
@@ -273,3 +275,41 @@ button {
 	size: inherit;
 	font: inherit;
 }
+
+.usr_img_btn img {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 1.5rem;
+}
+.usr_img_btn {
+	cursor: pointer;
+	margin: 0.5rem;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	transform: translate(-25%, 4rem);
+	background-color: #0E141B;
+	min-width: 9rem;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 999;
+	border-radius: 1rem;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content button {
+	cursor: pointer;
+	color: #a98ed5;
+	padding: 1em 1rem;
+	text-decoration: none;
+	width: 100%;
+	display: block;
+	border-radius: 1rem;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content button:hover {background-color: rgb(24, 30, 38);}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
