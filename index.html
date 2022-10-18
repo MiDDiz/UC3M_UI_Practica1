@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 	<head>
-		<title>Titulo</title>
-		<link rel="stylesheet" href="style.css">
+		<meta charset="UTF-8">
+		<title>Spotifynt</title>
+		<link rel="stylesheet" href="styles/index.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	</head>
 	<body>
@@ -32,72 +33,50 @@
 		<div class="content">
 				<div class="wrapper-top">
 					<div id="cred-bar">
-						<div class="sign_button">SIGN IN</div>
-						<div class="sign_button">LOG IN</div>
+						<button id="sign_in"><div class="sign_button">SIGN IN</div></button>
+						<button id="log_in"><div class="sign_button">LOG IN</div></button>
 					</div>
 				</div>
 				<div class="apartados">
 						<div class="apartado">
 							<div class="apartado_title">PlayList 1<span class="material-symbols-outlined">play_arrow</span></div>
 							<div class="covers">
-								<div class="song_elem">
-									<div class="cover">
-										<audio controls class="audio">
-											<source src="./audio/apartado1/estopa.mp3" type="audio/mpeg">
-										</audio>
-										<img class="cover1-src" src="./images/apartado1/118-estopa.jpg" alt="Portada de Estopa">
-									</div>
-									
+								<div class="container">
+									<img src="images/apartado1/118-estopa.jpg">
+									<button class="btn">► Play</button>
 									<div class="desc">
 										<br>Por la Raja de tu Falda
 									</div>
+								  </div>
 									
-								</div>
-								<div class="song_elem">
-									<div class="cover">
-										<audio controls class="audio">
-											<source src="./audio/apartado1/prueba.mp3" type="audio/mpeg">
-										</audio>
-										<img class="cover1-src" src="./images/apartado1/portada_1.jpg" alt="Portada de Random Access Memories, de Daft Punk">
-									</div>
+								  <div class="container">
+									<img src="images/apartado1/118-estopa.jpg">
+									<button class="btn">► Play</button>
 									<div class="desc">
-										<br>Giorgio by Moroder
+										<br>Por la Raja de tu Falda
 									</div>
-									
-								</div>
-								<div class="song_elem">
-									<div class="cover">
-										<audio controls class="audio">
-											<source src="./audio/apartado1/ratm.mp3" type="audio/mpeg">
-										</audio>
-										<img class="cover1-src" src="./images/apartado1/81-vO7ZkqnL._SL1500_.jpg" alt="Portada de Rage Against The Machine">
-									</div>
+								  </div>
+								  <div class="container">
+									<img src="images/apartado1/118-estopa.jpg">
+									<button class="btn">► Play</button>
 									<div class="desc">
-										<br>Sleep Now in the Fire
+										<br>Por la Raja de tu Falda
 									</div>
-								</div>
-								<div class="song_elem">
-									<div class="cover">
-										<audio controls class="audio">
-											<source src="./audio/apartado1/sea.mp3" type="audio/mpeg">
-										</audio>
-										<img class="cover1-src" src="./images/apartado1/artworks-A7UTCIJdbD3w-0-t500x500.jpg" alt="Portada de sea">
-									</div>
+								  </div>
+								  <div class="container">
+									<img src="images/apartado1/118-estopa.jpg">
+									<button class="btn">► Play</button>
 									<div class="desc">
-										<br>Fire Escape in the Sea
+										<br>Por la Raja de tu Falda
 									</div>
-								</div>
-								<div class="song_elem">
-									<div class="cover">
-										<audio controls class="audio">
-											<source src="./audio/apartado1/ye.mp3" type="audio/mpeg">
-										</audio>
-										<img class="cover1-src" src="./images/apartado1/kanye-west.jpg" alt="Portada de Kanye West">
-									</div>
+								  </div>
+								  <div class="container">
+									<img src="images/apartado1/118-estopa.jpg">
+									<button class="btn">► Play</button>
 									<div class="desc">
-										<br>Freestyle 4
+										<br>Por la Raja de tu Falda
 									</div>
-								</div>
+								  </div>
 							</div>
 						</div>
 						<div class="apartado">
@@ -207,7 +186,7 @@
 										<audio controls class="audio">
 											<source src="./audio/apartado3/carl.mp3" type="audio/mpeg">
 										</audio>
-										<img class="cover1-src" src="./images/apartado3/carl.jpg" alt="Portada de Random Access Memories, de Daft Punk">
+										<img class="cover1-src" src="./images/apartado3/carl.jpg" alt="Portada de We Rob Together">
 									</div>
 									<div class="desc">
 										<br>We Rob Together
@@ -215,10 +194,8 @@
 								</div>
 								<div class="song_elem">
 									<div class="cover">
-										<audio controls class="audio">
-											<source src="./audio/apartado3/3030.mp3" type="audio/mpeg">
-										</audio>
-										<img class="cover1-src" src="./images/apartado3/3030.jpg" alt="Portada de Random Access Memories, de Daft Punk">
+
+										<img class="cover1-src" src="./images/apartado3/3030.jpg" alt="Portada de 3030">
 									</div>
 									<div class="desc">
 										<br>3030
@@ -228,9 +205,28 @@
 						</div>
 				<div class="footer-padding"></div>
 				</div>
+		
+
 		</div>
-		<div class="footer">
-			<div class="footer-msg">Aviso a nuevos usuarios</div>
+
+
+			
+	<div class="player">
+		<div class="left">
+			<img src="./images/def.png" alt="Portada del álbum" id="cover_art">
 		</div>
+		<div class="right">
+		   <div class="top">
+				<a class="song">3030</a>
+				<a class="artist">Deltron 3030</a>
+			</div>
+			<div class="bottom">
+				<video controls="" _autoplay="" name="media"><source src="./audio/apartado3/3030.mp3" type="audio/mpeg"></video>
+			</div>
+		</div>
+	</div>
+
+	
+		<script src="logic/logic.js"></script>
 	</body>
 </html>
