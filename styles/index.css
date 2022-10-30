@@ -3,15 +3,15 @@ html {
 	display: block;
 	height: 100%;
 	font-family:Arial, Helvetica, sans-serif;
+	background: #0E141B; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0E141B, #535960); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0E141B, #373a3e); 
 }
 
 body {
 	padding: 0;
 	display: flex;
 	height: 100%;
-	background: #0E141B; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #0E141B, #535960); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #0E141B, #373a3e); 
 	margin: 0;
 }
 

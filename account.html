@@ -8,29 +8,58 @@
 	<link rel="stylesheet" href="styles/account.css">
 </head>
 <body>
+	<div class="column">
+		<div id="logo">
+			<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
+		</div>
+		<div class="options-wrapper">
+			<div class="options-menu"> 
+				<span class="material-symbols-outlined">refresh</span>
+				<span class="options-text">Volumen </span>
+			</div>
+			<div class="options-menu"> 
+				<span class="material-symbols-outlined">favorite</span>
+				<span class="options-text">Me gusta </span></div>
+			<div class="options-menu"> 
+				<span class="material-symbols-outlined">close</span>
+				<span class="options-text">Me gusta </span>
+			
+			</div>
+		</div>
+		<div class="policy-wrapper">
+			<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
+			<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 2 </a></div>
+		</div>
+</div>
+<div class="content">
 	<div class="account-wrapper">
 		<div class="account-title">
-			<h1>Cuenta de $USER</h1>
+			<h1 id="user_header">Cuenta de $USER</h1>
 			<div class="separator"></div>
 		</div>
-		<div class="account-information">
-			<ul>
-				<li>Nombre de usuario: <div id="div_username" contenteditable="true">$USERNAME</div></li>
-				<div class="separator"></div>
-				<li>Contraseña: <div id="div_passwd" contenteditable="true">$PASSWD</div></li>
-				<div class="separator"></div>
-				<li>Correo electronico: <div id="div_email" contenteditable="true">$EMAIL</div></li>
-				<div class="separator"></div>
-				<li>Nombre: <div id="div_name" contenteditable="true">$NAME</div></li>
-				<div class="separator"></div>
-				<li>Apellido\s: <div id="div_surname" contenteditable="true">$surname</div></li>
-				<div class="separator"></div>
-				<li>Fecha de Nacimiento: <div id="div_date"><button>$date</button></div></li>
-				<div class="separator"></div>
-				<li>Foto de Perfil: <div id="div_passwd"><button>$img</button></div></li>
-				<div class="separator"></div>
-			</ul>
+		<div class="wrapper-info">
+			<div class="account-information">
+				<ul>
+					<li>Nombre de usuario: <div class="neo-input displayed" id="div_username" contenteditable="false">$USERNAME</div></li>
+					<div class="separator"></div>
+					<li>Contraseña: <div id="div_passwd" class="neo-input hidden-passwd displayed" contenteditable="false" class="hidden-passwd">$PASSWD</div></li>
+					<div class="separator"></div>
+					<li>Correo electronico: <div id="div_email" class="neo-input displayed" contenteditable="false">$EMAIL</div></li>
+					<div class="separator"></div>
+					<li>Nombre: <div id="div_name" class="neo-input displayed" contenteditable="false">$NAME</div></li>
+					<div class="separator"></div>
+					<li>Apellido\s: <div id="div_surname" class="neo-input displayed" contenteditable="false">$surname</div></li>
+					<div class="separator"></div>
+					<li>Fecha de Nacimiento: <div id="div_date" class="neo-input displayed"><button>$date</button></div></li>
+					<div class="separator"></div>
+					<li>URI Foto de Perfil: <div id="div_img" class="neo-input displayed"><button>$img</button></div></li>
+					<div class="separator"></div>
+				</ul>
+			</div>
+			<button onclick=toggleEdit() class="info-btn">Editar informacion</button>
 		</div>
 	</div>
+</div>
+<script src="logic/account.js"></script>
 </body>
 </html>

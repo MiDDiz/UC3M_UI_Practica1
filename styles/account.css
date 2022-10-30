@@ -1,3 +1,9 @@
+@font-face {
+	font-family: 'password';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://jsbin-user-assets.s3.amazonaws.com/rafaelcastrocouto/password.ttf);
+  }
 html {
 	color: rgba(169, 142, 213, 1);
 }
@@ -15,7 +21,7 @@ h1 {
 ul {
     list-style-type: none;
 	width: fit-content;
-	margin-left: 20%;
+/*	margin-left: 20%;	*/
 }
 li{
 	padding: 0.25rem;
@@ -46,12 +52,40 @@ li{
 
 li + .separator {
 	height: 0.25em;
-	background-color: rgba(169, 142, 213, 0.4);
+	background-color: rgba(202, 171, 252, 0.4);
 	width: 100%;
 	margin-bottom: 1em;
 }
-
+.neo-input {
+	color: rgba(219, 209, 237, 1);
+}
 .account-information {
 	display: flex;
+	width: inherits;
+	margin-left: auto;
+	margin-right: 1em;
+}
+.hidden-passwd {
 	
+	  font-family: 'password';
+	  width: 100px; height: 16px;
+}
+.wrapper-info {
+	display: flex;
+	flex-direction: row;
+}
+.info-btn {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 1em;
+	margin-right: auto;
+	color: #0E141B;
+	background-color: #a98ed5;
+	height: fit-content;
+	width: fit-content;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	border-radius: 1em;
 }
