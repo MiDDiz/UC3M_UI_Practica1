@@ -4,10 +4,27 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Cuenta de Spotifyn't</title>
+	<!-- Estilos propios -->
 	<link rel="stylesheet" href="styles/index.css">
 	<link rel="stylesheet" href="styles/account.css">
+	<!--Estilos permitidos-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<!-- jquery-->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<!-- jquery ui-->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 <body>
+	<div id="dialog-message" title="Error al guardar informacion">
+		<p>
+		  <span class="ui-icon ui-icon-circle-cross"></span>
+		  Ha ocurrido un error a la hora de guardar tu información.
+		</p>
+		<p id="error-info">
+		</p>
+	  </div>
+
 	<div class="column">
 		<div id="logo">
 			<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
@@ -56,10 +73,13 @@
 					<div class="separator"></div>
 				</ul>
 			</div>
-			<button onclick=toggleEdit() class="info-btn">Editar informacion</button>
+			<button id="edit-info" onclick=toggleEdit() class="info-btn">Editar informacion</button>
+			<button id="save-info" onclick=saveEdit() class="info-btn hidden">Guardar informacion</button>
 		</div>
 	</div>
 </div>
+
+<script src="logic/userData.js"></script>
 <script src="logic/account.js"></script>
 </body>
 </html>

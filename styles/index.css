@@ -313,3 +313,31 @@ button {
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+  /* Estilos de la ventana modal de jquerry */
+.ui-widget-content  {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+	border-color:#a98ed5!important;
+}
+.ui-widget  {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+}
+.ui-dialog {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+}
+.ui-widget-header {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+	border-color:#a98ed5!important;
+
+}
+.ui-dialog-title {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+}
+.dialog-message {color: #a98ed5!important;}
+
+/* END */

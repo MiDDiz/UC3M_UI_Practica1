@@ -58,6 +58,7 @@ li + .separator {
 }
 .neo-input {
 	color: rgba(219, 209, 237, 1);
+	width: 100%;
 }
 .account-information {
 	display: flex;
@@ -89,3 +90,35 @@ li + .separator {
 	padding-bottom: 0.5em;
 	border-radius: 1em;
 }
+.editable {
+	color: grey;
+	background-color: white;
+}
+.hidden {
+	display: none;
+}
+/* Estilos de la ventana modal de jquerry */
+.ui-widget-content  {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+	border-color:#a98ed5!important;
+}
+.ui-widget  {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+}
+.ui-dialog {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+}
+.ui-widget-header {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+	border-color:#a98ed5!important;
+
+}
+.ui-dialog-title {
+	background-color: #373a3e!important;
+	color: #a98ed5!important;
+}
+.dialog-message {color: #a98ed5!important;}

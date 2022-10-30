@@ -9,6 +9,14 @@ class UserData {
 		this.usr_img = null;
 	}
 
+	isAvalible () {
+		if (this.username == null)
+			return (false);
+		if (localStorage.getItem(this.username) == null || localStorage.getItem(this.username) == "")
+			return (true);
+		return (false);
+	}
+
 	populateForm (formData) {
 		this.username = formData.get("username");
 		this.password = formData.get("password");

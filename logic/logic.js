@@ -51,8 +51,23 @@ window.onclick = function(event) {
 } 
 
 function closeSesion() {
-	localStorage.removeItem("logged")
-	location.reload();
+	// Mostrar ventana modal
+	$( function() {
+		$( "#dialog-message" ).dialog({
+		  modal: true,
+		  buttons: {
+			Ok: function() {
+				localStorage.removeItem("logged")
+				location.reload();
+			  	$( this ).dialog( "close" );
+			},
+			No: function() {
+				$( this ).dialog( "close" );
+			}
+		  }
+		});
+	  } );
+	
 }
 
 function openPage(site) {
@@ -83,5 +98,7 @@ function init()
 	hooks = addHooks();
 	addFunctionalities(hooks);
 	checkForLogin(hooks);
+	// Hide modal
+	$( "#dialog-message" ).hide();
 }
 init();
