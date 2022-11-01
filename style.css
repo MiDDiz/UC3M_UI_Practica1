@@ -16,6 +16,7 @@ body {
 }
 
 
+
 .column {
 	/*border: 1px solid rgb(168, 25, 25);*/
 	border-top-right-radius: 2em;
@@ -94,16 +95,7 @@ body {
 	flex-wrap: wrap;
 }
 
-.footer {
-	background-color: #0E141B;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 8%;
-	margin: 0;
-	display: flex;
-}
+
 
 .footer-msg{
 	margin: auto;
@@ -207,9 +199,7 @@ a {
 	width: 70%;
 }
 
-.footer-padding {
-	padding: 1em;
-}
+
 
 .cover {
 	display: flex;
@@ -231,7 +221,7 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 	width: 80px;
-	position: absolute;
+	position: relative;
 	transform: translate(70%, 120%);
 	z-index: 9;
 }
@@ -242,6 +232,7 @@ a {
 	border-radius: 1em;
 	width: auto;
 	height: 88%;
+	margin-bottom: 30px;
 }
 
 .apartado_title{
@@ -250,6 +241,8 @@ a {
 	font-size: 2em;
 	font-weight: 550;
 }
+
+
 
 .desc{
 	margin: auto;

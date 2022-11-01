@@ -335,6 +335,26 @@ a {
 	font-weight: 550;
 }
 
+.perfil_head{
+
+	height:150px;
+}
+
+.perfil_head img{
+	float: left;
+	margin-right: 30px;
+	height: 100px;
+	width: 100px;
+}
+
+.perfil_title{
+	color: #a98ed5;
+	margin-top: 20px;
+	font-family:Arial, Bold, Helvetica, sans-serif;
+	font-size: 5vw;
+	font-weight: 550;
+}
+
 .desc{
 	margin: auto;
 	text-align: center;
@@ -348,3 +368,56 @@ button {
 	size: inherit;
 	font: inherit;
 }
+
+.cancion-item{
+	background-color:#18212c;
+	height: 60px;
+	width: auto;
+	border-color:#000;
+	border-style: solid;
+	margin-bottom: 20px;
+}
+
+.cancion-item img{
+	float:left;
+	height: 60px;
+	width: 60px;
+	margin-right: 30px;
+	margin: auto;
+	text-align: center;
+	color: #a98ed5;
+	font-size: 0.95em;
+	
+}
+
+.song-text{
+	display: block;
+	margin: auto;
+	text-align: left;
+	margin-left: 80px;
+	color: #a98ed5;
+	font-size: 0.95em;
+	font-weight: bold;
+
+}
+
+.cancion-item.dragging{
+	opacity: 50%;
+}
+
+.cancion-item .rmv {
+	float: right;
+	background-color: #ff4e4e;
+	color: white;
+	padding: 16px 24px;
+	cursor: pointer;
+  }
+
+.cancion-item .play {
+	float: right;
+	background-color: #a98ed5;
+	color: white;
+	padding: 20.75px 24px;
+	margin-right: 30px;
+	cursor: pointer;
+  }
