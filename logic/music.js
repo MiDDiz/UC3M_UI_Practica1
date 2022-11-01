@@ -23,9 +23,7 @@ class SongHandler{
 				}
 			});
 		});
-
 	}
-
 }
 
 var SongMaster = new SongHandler([

@@ -55,3 +55,18 @@ button.onclick = () => {
 if (localStorage.getItem("logged") != null) {
 	document.location.href = "../index.html";
 }
+
+// wrapper function for modal msg
+function throw_dialog(message) {
+	$( "#error-info" ).html(message);
+		$( function() {
+			$( "#dialog-message" ).dialog({
+			  modal: true,
+			  buttons: {
+				Ok: function() {
+				  $( this ).dialog( "close" );
+				}
+			  }
+			});
+		  } );
+}
