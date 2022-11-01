@@ -412,7 +412,7 @@ button {
 	width: 125%;
 }
 
-.ul-forms li + .separator {
+li + .separator {
 	height: 0.25em;
 	background-color: rgba(202, 171, 252, 0.4);
 	width: 100%;
