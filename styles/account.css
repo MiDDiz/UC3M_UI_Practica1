@@ -11,18 +11,13 @@ body {
 	width: inherit;
 	height: inherit;
 }
-h1 {
-	padding-left: 0.25rem;
-	width: fit-content;
-	height: fit-content;
-	margin-bottom: 0.25rem;
-}
 
-ul {
+
+.ul-form {
     list-style-type: none;
 	width: fit-content;
-/*	margin-left: 20%;	*/
 }
+
 li{
 	padding: 0.25rem;
 	font-size: larger;
@@ -49,6 +44,7 @@ li{
 	padding: 0.25rem;
 	font-size: larger;
 }
+
 
 li + .separator {
 	height: 0.25em;
@@ -97,6 +93,7 @@ li + .separator {
 .hidden {
 	display: none;
 }
+
 /* Estilos de la ventana modal de jquerry */
 .ui-widget-content  {
 	background-color: #373a3e!important;
