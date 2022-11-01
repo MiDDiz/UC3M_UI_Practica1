@@ -13,7 +13,9 @@ function addHooks() {
             name_data : document.getElementById("div_name"),
             surname_data : document.getElementById("div_surname"),
             date_data : document.getElementById("div_date"),
-            img_data : document.getElementById("div_img")
+            img_data : document.getElementById("div_img"),
+			date_form : document.getElementById("form_date"),
+			img_form : document.getElementById("form_img")
         },
 		buttons : {
 			edit_info : document.getElementById("edit-info"),
@@ -23,6 +25,7 @@ function addHooks() {
     return hooks;
 }
 
+// dinamically fill content in page from logged cookie
 function fillContent(hooks){
     var  user_json = JSON.parse(hooks.getUserCookie());
     hooks.data_fields.user_header.innerHTML = `Informacion de ${user_json["username"]}`;
@@ -32,20 +35,29 @@ function fillContent(hooks){
     hooks.data_fields.name_data.innerHTML = user_json["name"];
     hooks.data_fields.surname_data.innerHTML = user_json["surname"];
     hooks.data_fields.date_data.innerHTML = user_json["birthday"];
-    hooks.data_fields.img_data.innerHTML = user_json["usr_img"];
-    
+	// People is able to have no img
+    hooks.data_fields.img_data.innerHTML = (user_json["usr_img"] == null || user_json["usr_img"] == "") ?
+											"Sin imágen" : user_json["usr_img"]; 
+    hooks.data_fields.date_form.value = user_json["birthday"];
 }
 
 function __init__() {
+	// redirrection if not logged
+	if (localStorage.getItem("logged") == null) {
+		document.location.href = "../index.html";
+	}
+	// normal activity
     var hooks = addHooks();
     fillContent(hooks);
+	// hide dialog.
 	$( "#dialog-message" ).hide();
 }
-
+// toggle the edition of fields
 function toggleEdit(){
 	var hooks = addHooks();
+	// automatically make field contents editable.
     for (const [key, value] of Object.entries(hooks.data_fields)) {
-		if (key != "date_data" && key != "img_data" && key != "user_header") {
+		if (!["date_data", "img_data", "user_header", "date_form", "img_form"].includes(key)) {
 			if (key == "passw_data") {
 				value.classList.remove("hidden-passwd");
 			}
@@ -53,9 +65,12 @@ function toggleEdit(){
 			value.classList.add("editable");
 		}
 	}
+	$("#form_date").show();
+	$("#form_img").show();
+	$("#div_date").hide();
+	$("#div_img").hide();
 
-
-
+	// remove edit button and add save button.
 	hooks.buttons.edit_info.classList.add("hidden");
 	hooks.buttons.save_info.classList.remove("hidden");
 }
@@ -65,7 +80,7 @@ function saveEdit() {
 	hooks.buttons.save_info.classList.add("hidden");
 	hooks.buttons.edit_info.classList.remove("hidden");
 	for (const [key, value] of Object.entries(hooks.data_fields)) {
-		if (key != "date_data" && key != "img_data" && key != "user_header") {
+		if (!["date_data", "img_data", "user_header", "date_form", "img_form"].includes(key)) {
 			if (key == "passw_data") {
 				value.classList.add("hidden-passwd");
 			}
@@ -74,52 +89,50 @@ function saveEdit() {
 		}
 	}
 	user = new UserData();
+	prev_user = JSON.parse(hooks.getUserCookie());
+	/* Replace user with data on fields */
 	user.username = hooks.data_fields.user_data.innerHTML;
 	user.password = hooks.data_fields.passw_data.innerHTML;
 	user.name = hooks.data_fields.name_data.innerHTML;
 	user.surname = hooks.data_fields.surname_data.innerHTML;
 	user.email = hooks.data_fields.email_data.innerHTML;
-	user.birthday = hooks.data_fields.date_data.innerHTML;
-	this.usr_img = hooks.data_fields.img_data.innerHTML;
-	if (!user.validateEmail()){
+	user.birthday = hooks.data_fields.date_form.value;
+	/* nasty check for sanitizing image swap*/
+	if (prev_user.hasOwnProperty("usr_img")) {
+		if (prev_user["usr_img"] != "") {
+			if (hooks.data_fields.img_form.value != "") {
+				user.usr_img = hooks.data_fields.img_form.value;;
+			}
+			else {
+				user.usr_img = prev_user["usr_img"];
+			}
+		}
+		else {
+			if (hooks.data_fields.img_form.value != "") {
+				user.usr_img = hooks.data_fields.img_form.value;
+			}
+			else {
+				user.usr_img = null;
+			}
+		}
+	}
+	else {
+		if (hooks.data_fields.img_form.value != "") {
+			user.usr_img = hooks.data_fields.img_form.value;
+		}
+		else {
+			user.usr_img = null;
+		}
+	}
+	if (!user.isAvalibleEmail()){
 		// Mostrar ventana modal
-		$( "#error-info" ).html("El correo no es válido");
-		$( function() {
-			$( "#dialog-message" ).dialog({
-			  modal: true,
-			  buttons: {
-				Ok: function() {
-				  $( this ).dialog( "close" );
-				}
-			  }
-			});
-		  } );
-	} else if (user.validatePasswd()) {
+		throw_dialog("El correo no es válido");
+	} else if (!user.validatePasswd()) {
 		// Mostrar ventana modal
-		$( "#error-info" ).html("La contraseña no es valida");
-		$( function() {
-			$( "#dialog-message" ).dialog({
-			  modal: true,
-			  buttons: {
-				Ok: function() {
-				  $( this ).dialog( "close" );
-				}
-			  }
-			});
-		  } );
+		throw_dialog("La contraseña no es valida");
 		  // If the user wants to change name then must choose one that is avalible.
 	} else if (user.username != localStorage.getItem("logged") && !user.isAvalible()) {
-		$( "#error-info" ).html("Ese nombre de usuario no está disponible");
-		$( function() {
-			$( "#dialog-message" ).dialog({
-			  modal: true,
-			  buttons: {
-				Ok: function() {
-				  $( this ).dialog( "close" );
-				}
-			  }
-			});
-		  } );
+		throw_dialog("Ese nombre de usuario no está disponible");
 	} else {
 		// Store new information: 
 		// Remove cookie for actual user
@@ -129,8 +142,27 @@ function saveEdit() {
 		// Set new actual user as currently logged.
 		localStorage.setItem("logged", user.username);
 	}
-	
+	$("#form_date").hide();
+	$("#form_img").hide();
+	$("#div_date").show();
+	$("#div_img").show();
+	location.reload();
 }
+
 
 __init__();
 
+// wrapper function for modal msg
+function throw_dialog(message) {
+	$( "#error-info" ).html(message);
+		$( function() {
+			$( "#dialog-message" ).dialog({
+			  modal: true,
+			  buttons: {
+				Ok: function() {
+				  $( this ).dialog( "close" );
+				}
+			  }
+			});
+		  } );
+}

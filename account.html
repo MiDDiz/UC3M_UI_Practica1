@@ -67,16 +67,24 @@
 					<div class="separator"></div>
 					<li>Apellido\s: <div id="div_surname" class="neo-input displayed" contenteditable="false">$surname</div></li>
 					<div class="separator"></div>
-					<li>Fecha de Nacimiento: <div id="div_date" class="neo-input displayed"><button>$date</button></div></li>
+					<li>Fecha de Nacimiento: <div id="div_date" class="neo-input displayed">$date</div></li><button id="btn_date" onclick="showInputDate()" style="display: none">Change date</button>
+					<input type="date" id="form_date" style="display: none;" name="birthday" value="">
+					
 					<div class="separator"></div>
-					<li>URI Foto de Perfil: <div id="div_img" class="neo-input displayed"><button>$img</button></div></li>
+					<li>URI Foto de Perfil: <div id="div_img" class="neo-input displayed">$img</div></li>
+					<input type="file" id="form_img" style="display: none;" name="usr_img" value="">
+					
 					<div class="separator"></div>
 				</ul>
 			</div>
 			<button id="edit-info" onclick=toggleEdit() class="info-btn">Editar informacion</button>
-			<button id="save-info" onclick=saveEdit() class="info-btn hidden">Guardar informacion</button>
+			<button id="save-info" onclick=saveEdit() class="info-btn hidden">Guardar informacion</button></div>
 		</div>
-	</div>
+		<div class="backbutton-wrapper">
+			<div class="form-back-button"><a href="index.html">Volver al inicio </a></div>
+		</div>
+	</div>	
+		
 </div>
 
 <script src="logic/userData.js"></script>

@@ -135,12 +135,14 @@ button {
 .wrapper-top {
 	display: flex;
 	flex-wrap: wrap;
-	height: fit-content;
+	position: fixed;
+	height: 7%;
 	width: 100%;
+	background-color: #0E141B;
 }
 
 #cred-bar{
-	background-color: #0E141B;
+	background-color: #a98ed5;
 	position: fixed;
 	right: 0;
 	margin-left: auto;
@@ -150,6 +152,7 @@ button {
 	width: auto;
 	display: flex;
 	flex-wrap: wrap;
+	height: 6.5%;
 }
 
 .usr_img_btn img {
@@ -218,7 +221,7 @@ button {
 }
 
 .footer-padding {
-	padding: 1em;
+	padding: 7%;
 }
 
 /* End of footer */
@@ -241,7 +244,7 @@ button {
 }
 
 .covers{
-	--gap: 32px;
+	--gap: 50px;
 	--num-cols: 5;
 	--row-height: 200px;
 
@@ -285,7 +288,7 @@ button {
 .cover img{
 	display:block;
     margin:auto;
-
+	min-width: 150px;
 	width: 70%;
 }
 
@@ -320,9 +323,11 @@ button {
 	transform: translate(70%, 120%);
 	z-index: 1;
 }
-
+.apartado {
+	margin-top: 5em;
+}
 .apartados{
-	margin-top: 1em;;
+	margin-top: 12%;;
 	padding-left:  2em;
 	margin-right: 2em;
 	border-radius: 1em;
@@ -396,9 +401,11 @@ button {
 
 .account-wrapper {
 	width: 100%;
-	height: 100%;
+	height: fit-content;
 	display: flex;
 	flex-direction: column;
+	padding-top: 5em;
+	padding-bottom: 5em;
 }
 .account-title {
 	padding-top: 1em;
@@ -412,7 +419,7 @@ button {
 	width: 125%;
 }
 
-li + .separator {
+ul > .separator {
 	height: 0.25em;
 	background-color: rgba(202, 171, 252, 0.4);
 	width: 100%;
@@ -458,4 +465,37 @@ li + .separator {
 }
 .hidden {
 	display: none;
+}
+
+input {
+	background-color: rgba(43, 55, 69, 0.7);
+	color: white;
+}
+
+/*True form */
+.form-back-button a {
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	border-radius: 1em;
+	background-color: rgba(14, 20, 27, 0.8);
+	margin-right: 1em;
+	margin-left: 1em;
+	align-items: center;
+	justify-content: center;
+	display:flex;
+	height: fit-content;
+	width: fit-content;
+}
+
+.form-back-button a:hover {
+	background-color: rgba(14, 20, 27, 0.6);
+}
+.backbutton-wrapper {
+	justify-content: center;
+	text-align: center;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
 }
