@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Perfil personal</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	</head>
+    
+	<body>
+		<div class="column">
+				<div id="logo">
+					<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
+				</div>
+				<div class="options-wrapper">
+					<div class="options-menu"> 
+						<span class="material-symbols-outlined">refresh</span>
+						<span class="options-text">Volumen </span>
+					</div>
+					<div class="options-menu"> 
+						<span class="material-symbols-outlined">favorite</span>
+						<span class="options-text">Me gusta </span></div>
+					<div class="options-menu"> 
+						<span class="material-symbols-outlined">close</span>
+						<span class="options-text">Me gusta </span>
+					
+					</div>
+				</div>
+				<div class="policy-wrapper">
+					<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
+					<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 2 </a></div>
+				</div>
+		</div>
+        
+		<div class="content">
+				<div class="wrapper-top">
+					<div id="cred-bar">
+						<button id="sign_in"><div class="sign_button">SIGN IN</div></button>
+						<button id="log_in"><div class="sign_button">LOG IN</div></button>
+					</div>
+				</div>
+				<div class="apartados">
+                        <div class="apartado">
+                            <div class="perfil_head">
+                                <img src="https://www.fundaciocaixaltea.com/wp-content/uploads/2018/01/default-profile.png">
+                                <div class="perfil_title"> Tu Perfil</div>
+                                
+                            </div>
+                        </div>
+						<div class="apartado">
+							<div class="apartado_title">Artistas más escuchados     <span class="material-symbols-outlined">Monitoring</span></div>
+							<div class="covers">
+								<div class="container">
+									<a href=artista.html><img src="https://pyxis.nymag.com/v1/imgs/38c/a1d/97dfb294c65f69b61ceab6ca2561f54bd9-kendrick-lamar.rsquare.w330.jpg">
+									</a>
+                                    <div class="desc">
+										<br>Kendrick Lamar
+									</div>
+								  </div>
+									
+                                  <div class="container">
+									<a href=artista.html><img src="https://pyxis.nymag.com/v1/imgs/fa9/306/c29485b612cbbf743f64d3dbe667762f61-13-kanye-west-tlop.rsquare.w700.jpg">
+									</a>
+                                    <div class="desc">
+										<br>Kanye West
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista.html><img src="https://i.scdn.co/image/ab6761610000e5ebb00f2e31d509ddc6fa0eb24b">
+									</a>
+                                    <div class="desc">
+										<br>Denzel Curry
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista.html><img src="https://lastfm.freetls.fastly.net/i/u/770x0/a252b64dc64e695ebc239069d9ae3874.jpg">
+									</a>
+                                    <div class="desc">
+										<br>MF DOOM
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista.html><img src="https://dice-i-scdn-co.imgix.net/image/ab6761610000e5eb8278b782cbb5a3963db88ada">
+									</a>
+                                    <div class="desc">
+										<br>Tyler The Creator
+									</div>
+								  </div>
+                                  
+							</div>
+						</div>
+						<div class="apartado">
+							<div class="apartado_title">Canciones más escuchadas     <span class="material-symbols-outlined">Monitoring</span></div>
+							<div class="covers">
+								<div class="container">
+									<img src="https://static.qobuz.com/images/covers/oc/4v/avm8t4zm04voc_600.jpg">
+									<button class="btn" onclick = "changeSong('https://static.qobuz.com/images/covers/oc/4v/avm8t4zm04voc_600.jpg',
+																			  'Vaudeville Villain',
+																			  'Viktor Vaughn',
+																			  'audio/perfil/vv.mp3')">► Play</button>
+									<div class="desc">
+										<br>Vaudeville Villain
+									</div>
+								  </div>
+									
+								  <div class="container">
+									<img src="https://upload.wikimedia.org/wikipedia/en/4/4d/The_life_of_pablo_alternate.jpg">
+									<button class="btn" onclick = "changeSong('https://upload.wikimedia.org/wikipedia/en/4/4d/The_life_of_pablo_alternate.jpg',
+																			  'Freestyle 4',
+																			  'Kanye West',
+																			  'audio/perfil/ye.mp3')">► Play</button>
+									<div class="desc">
+										<br>Freestyle 4
+									</div>
+								  </div>
+                                  <div class="container">
+									<img src="https://i.scdn.co/image/ab67616d0000b273d8b52e640a1a6ea619f1dc6e">
+									<button class="btn" onclick = "changeSong('https://i.scdn.co/image/ab67616d0000b273d8b52e640a1a6ea619f1dc6e',
+																			  'bag or die',
+																			  'bbno$',
+																			  'audio/novedades/bagordie.mp3')">► Play</button>
+									<div class="desc">
+										<br>bag or die
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="https://m.media-amazon.com/images/I/81wSpWSGbVL._SS500_.jpg">
+									<button class="btn" onclick = "changeSong('https://m.media-amazon.com/images/I/81wSpWSGbVL._SS500_.jpg',
+																			  'Lucid Dreams',
+																			  'Juice WRLD',
+																			  'audio/apartado2/luciddreams.mp3')">► Play</button>
+									<div class="desc">
+										<br>Lucid Dreams
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="https://m.media-amazon.com/images/I/81vqCvM2EJL._SL1200_.jpg">
+									<button class="btn" onclick = "changeSong('https://m.media-amazon.com/images/I/81vqCvM2EJL._SL1200_.jpg',
+																			  'Feel The Love',
+																			  'KIDS SEE GHOSTS ft. Pusha T',
+																			  'audio/perfil/ftl.mp3')">► Play</button>
+									<div class="desc">
+										<br>Takin' It Back
+									</div>
+								  </div>
+							</div>
+						</div>
+						<div class="apartado">
+							<div class="apartado_title">Canciones que te gustan <span class="material-symbols-outlined">Favorite</span></div>
+							<div class="covers">
+								<div class="container">
+									<img src="images/tendencias/monotonia.png">
+									<button class="btn" onclick = "changeSong('images/tendencias/monotonia.png',
+																			  'Monotonía',
+																			  'Shakira, Ozuna',
+																			  'audio/tendencias/monotonia.mp3')">► Play</button>
+									<div class="desc">
+										<br>Monotonia
+									</div>
+								  </div>
+									
+								  <div class="container">
+									<img src="images/latin/despecha.png">
+									<button class="btn" onclick = "changeSong('images/latin/despecha.png',
+																			  'DESPECHÁ',
+																			  'Rosalía',
+																			  'audio/latin/despecha.mp3')">► Play</button>
+									<div class="desc">
+										<br>DESPECHÁ
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="images/latin/gatubela.png">
+									<button class="btn" onclick = "changeSong('images/latin/gatubela.png',
+																			  'GATUBELA',
+																			  'KAROL G, Maldy',
+																			  'audio/latin/gatubela.mp3')">► Play</button>
+									<div class="desc">
+										<br>GATUBELA
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="images/latin/chachos.png">
+									<button class="btn" onclick = "changeSong('images/latin/chachos.png',
+																			  'Los Chachos',
+																			  'Piso 21, Manuel Turizo',
+																			  'audio/latin/chachos.mp3')">► Play</button>
+									<div class="desc">
+										<br>Los Chachos
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="images/tendencias/bachata.png">
+									<button class="btn" onclick = "changeSong('images/tendencias/bachata.png',
+																			  'La Bachata',
+																			  'Manuel Turizo',
+																			  'audio/tendencias/bachata.mp3')">► Play</button>
+									<div class="desc">
+										<br>La Bachata
+									</div>
+								  </div>
+							</div>
+
+
+						</div>
+                        <div class="apartado">
+							<div class="apartado_title">Usuarios que sigues <span class="material-symbols-outlined">Person</span></div>
+							<div class="covers">
+								<div class="container">
+									<a href=perfil.html onclick = "changeName('peepee')"><img src="https://pbs.twimg.com/profile_images/507819548834148352/jyx1JOS-_400x400.jpeg">
+									</a>
+                                    <div class="desc">
+										<br>xXPaPacoXx
+									</div>
+								  </div>
+									
+                                  <div class="container">
+									<a href=perfil.html><img src="https://s3.dia.es/medias/productimages/h65/h1f/11138300051486.jpg">
+									</a>
+                                    <div class="desc">
+										<br>Josefa Vargas
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista.html><img src="https://i.scdn.co/image/ab6761610000e5ebb00f2e31d509ddc6fa0eb24b">
+									</a>
+                                    <div class="desc">
+										<br>Denzel Curry
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista.html><img src="https://lastfm.freetls.fastly.net/i/u/770x0/a252b64dc64e695ebc239069d9ae3874.jpg">
+									</a>
+                                    <div class="desc">
+										<br>MF DOOM
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista.html><img src="https://dice-i-scdn-co.imgix.net/image/ab6761610000e5eb8278b782cbb5a3963db88ada">
+									</a>
+                                    <div class="desc">
+										<br>Tyler The Creator
+									</div>
+								  </div>
+                                  
+							</div>
+                            
+							<div class="footer-padding"></div>
+							<div class="footer-padding"></div>
+							<div class="footer-padding"></div>
+
+						</div>
+				
+			</div>
+		
+
+		</div>
+
+
+			
+	<div class="player">
+		<div class="left">
+			<img src="./images/def.png" alt="Portada del álbum" id="cover_art">
+		</div>
+		<div class="right">
+		   <div class="top">
+				<a class="song" id="song"></a>
+				<a class="artist" id="artist" ></a>
+			</div>
+			<div class="bottom">
+				<video controls="" _autoplay="" name="media" id="song_file"></video>
+			</div>
+		</div>
+	</div>
+
+	
+		<script src="logic/logic.js"></script>
+		<script src="logic/play.js"></script>
+        <script src="logic/profile.js"></script>
+	</body>
+</html>
