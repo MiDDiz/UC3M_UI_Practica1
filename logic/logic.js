@@ -1,3 +1,4 @@
+var LastQuerry = null;
 function addHooks() 
 {
 	// namespace for any hook that we need.
@@ -10,6 +11,8 @@ function addHooks()
 			main:document.getElementById("cred-bar")
 		}
 	}
+
+
 	console.log("Hooks Attatched")
 	return (hooks);
 }
@@ -28,6 +31,18 @@ function addFunctionalities(hooks)
 		document.location.href = "./log_in_form.html";
 		return ;
 	}
+
+	$("#goto-user-lists").click(() => {
+		openPage("../canciones.html");
+	});
+
+	$("#goto-new-list").click(() => {
+		openPage("../canciones.html");
+	});
+
+	$("#search-bar").keyup(() => {
+		startSearch();
+	})
 }
 
 function dropUserMenu() {
@@ -101,4 +116,47 @@ function init()
 	// Hide modal
 	$( "#dialog-message" ).hide();
 }
+
+function startSearch(){
+	// Get input
+
+	var querry = $("#search-bar").val();
+	// If empty querry return site to normal:
+	if (querry == "")
+	{
+		location.reload();
+	}
+	// Store as last querry
+	LastQuerry = querry;
+	// Get all matching songs
+	var songs = SongMaster.find(querry);
+	// Clear DOM.
+	console.log(songs);
+	$("#master-apartados").html("");
+	// Append elements Fount
+	$("#master-apartados").append(`
+		<div class="apartado">
+		<div class="apartado_title">Resultados: <span class="material-symbols-outlined">play_arrow</span></div>
+			<div class="covers">
+			</div>
+		</div>
+	`)
+	songs.forEach(song => {
+		$(".covers").append(`
+			<div class="container">
+				<img src="${song.cover}">
+				<button class="btn" onclick = "changeSong('${song.cover}',
+																	  '${song.title}',
+																	  '${song.artist}',
+																	  '${song.path}')">
+																	  ► Play</button>
+																	  <div class="desc">
+																	  	<br>${song.title}
+																  	  </div>
+																	  </div>
+			
+		`)
+	});
+}
+
 init();

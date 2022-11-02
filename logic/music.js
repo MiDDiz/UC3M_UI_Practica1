@@ -14,15 +14,26 @@ class SongHandler{
 
 	find(str_key_words) {
 		var key_words = str_key_words.split(" ");
-		var matches = []
+		var matches = [];
 		var not_matches = this.songs;
-		key_words.forEach(word => {
+
 			not_matches.forEach(song => {
-				if (song.title.toLowerCase.includes(word.toLowerCase())){
-					
+				if (song.title.toLowerCase().includes(str_key_words.toLowerCase())){
+					matches.push(song);
 				}
 			});
-		});
+
+		var uniqueMatches = [];
+		matches.filter(function(item){
+			var i = uniqueMatches.findIndex(x => (x.path == item.path && x.title == item.title));
+			if(i <= -1){
+				uniqueMatches.push(item);
+			}
+			return null;
+		  });
+		  
+
+		return (uniqueMatches);
 	}
 }
 
@@ -43,5 +54,9 @@ var SongMaster = new SongHandler([
 	new Song("./audio/apartado3/nights.mp3", "The Nights", "Avicii", "./images/apartado3/nights.jpg" ),
 	new Song("./audio/apartado3/rise.mp3", "RISE", "The glitch mob", "./images/apartado3/rise.jpg"),
 	new Song("./audio/apartado3/carl.mp3", "We Rob Together", "Carl Cox", "./images/apartado3/carl.jpg"),
-	new Song("./audio/apartado3/3030.mp3", "3030", "Dan the Automator Kid Koala", "./images/apartado3/3030.jpg")
+	new Song("./audio/apartado3/3030.mp3", "3030", "Dan the Automator Kid Koala", "./images/apartado3/3030.jpg"),
+
+	new Song("./audio/latin/chachos.mp3", "Los Chachos", "Piso 21", "https://i.scdn.co/image/ab67616d00001e0238541f13c5b5519554feda1c"),
+	new Song("./audio/latin/despecha.mp3", "Despechá", "Rosalía", "https://i.scdn.co/image/ab67616d00001e028f072024e0358fc5c62eba41"),
+	new Song("./audio/latin/gatubela.mp3", "Gatubela", "Karol G", ""),
 ])
