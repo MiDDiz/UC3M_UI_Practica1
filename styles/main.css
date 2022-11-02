@@ -40,7 +40,7 @@ button {
 }
 
 .column {
-	border-top-right-radius: 2em;
+
 	display: flex;
 	position: fixed;
  	flex-direction: column;
@@ -53,7 +53,6 @@ button {
 /* Lef column: menu */
 
 .left-column {
-	border-top-right-radius: 2em;
 	display: flex;
 	position: fixed;
  	flex-direction: column;
@@ -158,7 +157,9 @@ button {
 }
 
 #cred-bar{
-	background-color: #a98ed5;
+	background: #0E141B; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0E141B, #a98ed5); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0E141B, #a98ed5); 
 	position: fixed;
 	right: 0;
 	margin-left: auto;
@@ -766,3 +767,16 @@ new
 	width: fit-content;
 	height: fit-content;
   }
+
+.input-title {
+	display: flex;
+	flex-direction:row;
+	text-align: center;
+}
+.input-title input {
+	height: 1.5em;
+	width: 50%;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 5em;
+}

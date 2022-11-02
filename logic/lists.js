@@ -30,3 +30,11 @@ class List {
 	}
 
 }
+
+/* 
+ para displayerar tus listas -> for each lista generar un apartado titulo: lista titulo
+ llenar con canciones de lista
+
+ para generar las listas es mas fumada la vdd
+ hay que meter el buscador, hacer una seccion de busqueda
+*/

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Nueva lista en Spotifyn't</title>
+	<!-- Estilos propios -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- Icons-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<!-- jquery-->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<!-- jquery ui-->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body>
+	<div id="dialog-message" title="Error al guardar informacion">
+		<p>
+		  <span class="ui-icon ui-icon-circle-cross"></span>
+		  Ha ocurrido un error a la hora de guardar tu información.
+		</p>
+		<p id="error-info">
+		</p>
+	  </div>
+
+	<div class="left-column expanded">
+		<div id="logo">
+			<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
+		</div>
+		<div class="options-wrapper">
+			<!-- Options menu item -->
+			<div class="options-menu" id="goto-user-lists">
+				<!-- Icon --> 
+				<span class="material-symbols-outlined">format_list_bulleted</span>
+				<!-- Text -->
+				<span class="options-text">🔥 Tus listas 🔥 </span>
+			</div>
+			<!-- Options menu item-->
+			<div class="options-menu" id="goto-new-list"> 
+				<span class="material-symbols-outlined">add</span>
+				<span class="options-text">Crea una nueva lista 😎 </span>
+			</div>
+		</div>
+		<div class="policy-wrapper">
+			<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
+			<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 2 </a></div>
+		</div>
+</div>
+<div class="content">
+	<!-- Top navbar -->
+	<div class="wrapper-top">
+		<div class ="search-box-wrapper">
+			<div class="search-box">
+			  <button class="btn-search"><span class="material-symbols-outlined">search</span></button>
+			  <input id="search-bar" type="text" class="input-search" placeholder="Busca...">
+			</div>
+		</div>
+		<div id="cred-bar">
+			<button id="sign_in"><div class="sign_button">SIGN IN</div></button>
+			<button id="log_in"><div class="sign_button">LOG IN</div></button>
+		</div>
+	</div>
+	<!-- List title -->
+	<div class="apartados">
+		<h1>Creación de una nueva lista</h1>
+		<div class="input-title"><h3>Titulo: </h3><input type="text" id="list-title"> </div>
+		<div class="apartado">
+			<div class="apartado_title">Selecciona las canciones: </div>
+			<div class="covers">
+				<h4>Busca algo en el buscador...</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="logic/music.js"></script>
+<script src="logic/userData.js"></script>
+<script src="logic/new_list.js"></script>
+</body>
+</html>
