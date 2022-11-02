@@ -102,7 +102,11 @@ function checkForLogin(hooks){
 	// if we are logged in
 	if (localStorage.getItem("logged") != null) {
 		changeHeader(hooks);
+		$(".footer").hide();
 	}
+	// if not hide player and search
+	$(".player").hide();
+	$(".search-box-wrapper").hide();
 }
 
 function init()

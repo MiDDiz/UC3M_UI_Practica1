@@ -1,4 +1,3 @@
-var foo;
 class UserData {
 	constructor() {
 		this.username = null;
@@ -131,7 +130,6 @@ class UserData {
 			if (((value == "") || (value == null)) && 
 				((key != "usr_img") && (key != "liked_songs")))
 			{
-				foo = value;
 				console.log(key != "usr_img");
 				console.log(value);
 				return (-1);

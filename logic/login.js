@@ -3,26 +3,37 @@ var formData;
 var newUser;
 
 button.onclick = () => {
-	console.log("Log button");
 	formData = new FormData(document.querySelector('form'));
-	newUser = new UserData();
 	// just username and passwd.
-	newUser.populateForm(formData);
-	var requestUserDatabase = localStorage.getItem(newUser.username);
+	var requestUserDatabase = localStorage.getItem(formData.get("username"));
 	if (requestUserDatabase == null) {
-		alert("El usuario no está registrado!");
+		throw_dialog("El usuario no está registrado!");
 		return ;
 	}
 	var objson = JSON.parse(requestUserDatabase);
-	if (newUser.password === objson["password"]) {
-		localStorage.setItem("logged", newUser.username);
+	if (formData.get("password") == objson["password"]) {
+		localStorage.setItem("logged", formData.get("username"));
 		return ;
 	}
 	else {
-		alert("La contraseña es incorrecta!");
+		throw_dialog("La contraseña es incorrecta!");
 	}
 }
 
 if (localStorage.getItem("logged") != null) {
 	document.location.href = "../index.html";
+}
+// wrapper function for modal msg
+function throw_dialog(message) {
+	$( "#error-info" ).html(message);
+		$( function() {
+			$( "#dialog-message" ).dialog({
+			  modal: true,
+			  buttons: {
+				Ok: function() {
+				  $( this ).dialog( "close" );
+				}
+			  }
+			});
+		  } );
 }
