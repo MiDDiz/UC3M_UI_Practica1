@@ -8,6 +8,7 @@ class UserData {
 		this.birthday = null;
 		this.usr_img = null;
 		this.liked_songs = [];
+		this.user_lists = []
 	}
 
 	populateFromJSON(cookie){
@@ -19,6 +20,7 @@ class UserData {
 		this.birthday = cookie["birthday"];
 		this.usr_img = cookie["usr_img"];
 		this.liked_songs = cookie["liked_songs"];
+		user_lists = cookie["user_lists"];
 	}
 
 	alreadyLiked(title){
@@ -128,7 +130,7 @@ class UserData {
 	validate (){
 		for (const [key, value] of Object.entries(this)){
 			if (((value == "") || (value == null)) && 
-				((key != "usr_img") && (key != "liked_songs")))
+				((key != "usr_img") && (key != "liked_songs") && (key != "user_lists")));
 			{
 				console.log(key != "usr_img");
 				console.log(value);
