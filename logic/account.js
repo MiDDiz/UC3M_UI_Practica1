@@ -51,6 +51,14 @@ function __init__() {
     fillContent(hooks);
 	// hide dialog.
 	$( "#dialog-message" ).hide();
+	$("#goto-user-lists").click(() => {
+		openPage("../canciones.html");
+	});
+	
+	$("#goto-new-list").click(() => {
+		openPage("../canciones.html");
+	});
+	
 }
 // toggle the edition of fields
 function toggleEdit(){
@@ -149,6 +157,10 @@ function saveEdit() {
 	location.reload();
 }
 
+
+function openPage(site) {
+	document.location.href = site;
+}
 
 __init__();
 

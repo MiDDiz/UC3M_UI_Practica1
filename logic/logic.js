@@ -11,9 +11,6 @@ function addHooks()
 			main:document.getElementById("cred-bar")
 		}
 	}
-
-
-	console.log("Hooks Attatched")
 	return (hooks);
 }
 
@@ -79,7 +76,6 @@ function closeSesion() {
 		  }
 		});
 	  } );
-	
 }
 
 function openPage(site) {
@@ -92,7 +88,7 @@ function changeHeader(hooks) {
 	hooks.header.main.innerHTML = `<button class="usr_img_btn" onclick="dropUserMenu()"><img class="usr_img" src="${usr_img}"></button>
 	<div id="myDropdown" class="dropdown-content">
 		<button onclick="openPage('../account.html')">Cuenta</button>
-		<button onclick="openPage('../profile.html')">Perfil</button>
+		<button onclick="openPage('../perfil.html')">Perfil</button>
 		<button onclick="closeSesion()">Cerrar Sesion</button>
   	</div>`;
 
@@ -103,16 +99,22 @@ function checkForLogin(hooks){
 	if (localStorage.getItem("logged") != null) {
 		changeHeader(hooks);
 		$(".footer").hide();
+		$(".player").show();
+		$(".search-box-wrapper").show();
 	}
-	// if not hide player and search
-	$(".player").hide();
-	$(".search-box-wrapper").hide();
+	else {
+		// if not hide player and search
+		$(".player").hide();
+		$(".search-box-wrapper").hide();
+	}
 }
 
 function init()
 {
+
 	hooks = addHooks();
 	addFunctionalities(hooks);
+	generateTimers();
 	checkForLogin(hooks);
 	// Hide modal
 	$( "#dialog-message" ).hide();
@@ -164,6 +166,8 @@ function startSearch(){
 		`)
 	});
 }
+
+
 function liked(title)
 {
 	$("#like-" + `${title}`).css("color", "red");
@@ -179,4 +183,44 @@ function liked(title)
 	user.saveCookie();
 
 }
+
+/*
+ * Timer function
+*/ 
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds; 
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            start = Date.now() + 1000;
+        }
+    };
+
+    timer();
+    setInterval(timer, 1000);
+}
+/*
+ * Hook each timer to each element.
+*/ 
+function generateTimers(){
+	time1 = document.getElementById('time1');
+	time2 = document.getElementById('time2');
+	time3 = document.getElementById('time3');
+	startTimer(3600, time1);
+	startTimer(2000, time2);
+	startTimer(300, time3);
+}
+
 init();

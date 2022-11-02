@@ -761,3 +761,8 @@ new
 	margin-right: 30px;
 	cursor: pointer;
   }
+
+.timer {
+	width: fit-content;
+	height: fit-content;
+  }

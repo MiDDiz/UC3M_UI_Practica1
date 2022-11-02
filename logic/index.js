@@ -123,12 +123,13 @@ function checkForLogin(hooks){
  * Trigger on load, used to not clog global namespace. 
 */
 
+
 function init()
 {
 	hooks = addHooks();
 	addFunctionalities(hooks);
 	checkForLogin(hooks);
-	// Hide modal
+
 	$( "#dialog-message" ).hide();
 }
 // Trigger on load.

@@ -13,6 +13,7 @@ button.onclick = () => {
 	var objson = JSON.parse(requestUserDatabase);
 	if (formData.get("password") == objson["password"]) {
 		localStorage.setItem("logged", formData.get("username"));
+		document.location.href = "../index.html";
 		return ;
 	}
 	else {
