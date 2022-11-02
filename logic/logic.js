@@ -46,13 +46,11 @@ function addFunctionalities(hooks)
 }
 
 function dropUserMenu() {
-	console.log("dropping down")
 	document.getElementById("myDropdown").classList.toggle("show");
 }
 
 window.onclick = function(event) {
 	if (!event.target.matches('.usr_img')) {
-		console.log("NOT TOGGLING")
 		var dropdowns = document.getElementsByClassName("dropdown-content");
 		var i;
 		for (i = 0; i < dropdowns.length; i++) {
@@ -62,7 +60,6 @@ window.onclick = function(event) {
 			}
 		}
 	}
-	console.log("Matches: " + event.target.classList)
 } 
 
 function closeSesion() {
@@ -150,13 +147,32 @@ function startSearch(){
 																	  '${song.artist}',
 																	  '${song.path}')">
 																	  ► Play</button>
-																	  <div class="desc">
-																	  	<br>${song.title}
-																  	  </div>
-																	  </div>
+				<div class="desc">
+					<br>${song.title} 
+					<button class="like-btn" id="like-${song.title}" onclick="liked('${song.title}')">
+						<span class="material-symbols-outlined">
+						favorite
+						</span>
+					</button>
+				</div>
+			</div>
 			
 		`)
 	});
 }
+function liked(title)
+{
+	$("#like-" + `${title}`).css("color", "red");
+	var userCookie = JSON.parse(localStorage.getItem(localStorage.getItem("logged")));
+	var user = new UserData();
+	user.populateFromJSON(userCookie);
+	console.log(userCookie);
+	console.log(user);
+	if (user.alreadyLiked(title))
+		return ;
+	console.log(`Liked: ${title}`);
+	user.appendSong(SongMaster.findByTitle(title));
+	user.saveCookie();
 
+}
 init();

@@ -35,6 +35,20 @@ class SongHandler{
 
 		return (uniqueMatches);
 	}
+
+	
+	findByTitle(title) {
+		var found = null;
+		this.songs.forEach(song => {
+			if (found != null)
+				return ;
+			if (song.title == title){
+				found = song;
+			}
+		});
+		return (found);
+	}
+
 }
 
 var SongMaster = new SongHandler([

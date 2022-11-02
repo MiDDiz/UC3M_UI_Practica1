@@ -1,3 +1,4 @@
+var foo;
 class UserData {
 	constructor() {
 		this.username = null;
@@ -7,6 +8,36 @@ class UserData {
 		this.email = null;
 		this.birthday = null;
 		this.usr_img = null;
+		this.liked_songs = [];
+	}
+
+	populateFromJSON(cookie){
+		this.username = cookie["username"];
+		this.password = cookie["password"];
+		this.name = cookie["name"];
+		this.surname = cookie["surname"];	
+		this.email = cookie["email"];
+		this.birthday = cookie["birthday"];
+		this.usr_img = cookie["usr_img"];
+		this.liked_songs = cookie["liked_songs"];
+	}
+
+	alreadyLiked(title){
+		var liked = false;
+		this.liked_songs.forEach(song => {
+			if (song.title == title)
+				liked = true;
+		});
+		return (liked);
+	}
+
+	appendSong(song){
+		this.liked_songs.push(song);
+		this.saveCookie();
+	}
+
+	saveCookie(){
+		localStorage.setItem(this.username, JSON.stringify(this));
 	}
 
 	populateForm (formData) {
@@ -97,8 +128,14 @@ class UserData {
 
 	validate (){
 		for (const [key, value] of Object.entries(this)){
-			if (value == "" && key != "usr_img")
+			if (((value == "") || (value == null)) && 
+				((key != "usr_img") && (key != "liked_songs")))
+			{
+				foo = value;
+				console.log(key != "usr_img");
+				console.log(value);
 				return (-1);
+			}
 		}
 		if (!this.validateEmail())
 			return (-2);
