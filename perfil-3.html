@@ -2,7 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<title>Perfil personal</title>
+		<title>Fran</title>
 		<link rel="stylesheet" href="styles/main.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<!-- jquery-->
@@ -10,18 +10,10 @@
 		<!-- jquery ui-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-		
 	</head>
     
 	<body>
-		<!-- Dialog -->
-		<div id="dialog-message" title="Error al guardar informacion">
-			<p>
-			  <span class="ui-icon ui-icon-circle-cross"></span>
-				¿Quieres cerrar sesión?
-			</p>
-		</div>
-		<div class="left-column">
+		<div class="column">
 				<div id="logo">
 					<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
 				</div>
@@ -31,7 +23,7 @@
 					<!-- Icon --> 
 					<span class="material-symbols-outlined">format_list_bulleted</span>
 					<!-- Text -->
-					<span class="options-text">🔥 Ir al inicio 🔥 </span>
+					<span class="options-text">🔥 Tus listas 🔥 </span>
 				</div>
 				<!-- Options menu item-->
 				<div class="options-menu" id="goto-new-list"> 
@@ -55,8 +47,8 @@
 				<div class="apartados">
                         <div class="apartado">
                             <div class="perfil_head">
-                                <img src="../images/usr_image.jpg">
-                                <div class="perfil_title"> Tu Perfil</div>
+                                <img src="https://s3.dia.es/medias/productimages/h65/h1f/11138300051486.jpg">
+                                <div class="perfil_title"> Josefa Vargas</div>
                                 
                             </div>
                         </div>
@@ -72,24 +64,37 @@
 								  </div>
 									
                                   <div class="container">
-									<a href=artista-2.html><img src="https://pyxis.nymag.com/v1/imgs/fa9/306/c29485b612cbbf743f64d3dbe667762f61-13-kanye-west-tlop.rsquare.w700.jpg">
+									<a href=artista.html><img src="https://pyxis.nymag.com/v1/imgs/fa9/306/c29485b612cbbf743f64d3dbe667762f61-13-kanye-west-tlop.rsquare.w700.jpg">
 									</a>
                                     <div class="desc">
 										<br>Kanye West
 									</div>
 								  </div>
                                   <div class="container">
-									<a href=artista-3.html><img src="https://i.scdn.co/image/ab6761610000e5ebb00f2e31d509ddc6fa0eb24b">
+									<a href=artista.html><img src="https://i.scdn.co/image/ab6761610000e5ebb00f2e31d509ddc6fa0eb24b">
 									</a>
                                     <div class="desc">
 										<br>Denzel Curry
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista.html><img src="https://lastfm.freetls.fastly.net/i/u/770x0/a252b64dc64e695ebc239069d9ae3874.jpg">
+									</a>
+                                    <div class="desc">
+										<br>MF DOOM
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista.html><img src="https://dice-i-scdn-co.imgix.net/image/ab6761610000e5eb8278b782cbb5a3963db88ada">
+									</a>
+                                    <div class="desc">
+										<br>Tyler The Creator
 									</div>
 								  </div>
                                   
 							</div>
 						</div>
 						<div class="apartado">
-							<div class="apartado_title">Canciones más escuchadas     <span class="material-symbols-outlined">Monitoring</span></div>
 							<div class="apartado">
 								<div class="apartado_title">Canciones más escuchadas     <span class="material-symbols-outlined">Monitoring</span></div>
 								<div class="covers">
@@ -131,97 +136,15 @@
 									  </div>
 								</div>
 							</div>
-						</div>
-						<div class="apartado">
-							<div class="apartado_title">Canciones que te gustan <span class="material-symbols-outlined">Favorite</span></div>
-							<div id="liked-master" class="covers">
-								<div class="container">
-									<img src="images/tendencias/monotonia.png">
-									<button class="btn" onclick = "staticChangeSong('images/tendencias/monotonia.png',
-																			  'Monotonía',
-																			  'Shakira, Ozuna',
-																			  'audio/tendencias/monotonia.mp3')">► Play</button>
-									<div class="desc">
-										<br>Monotonia
-									</div>
-								  </div>
-									
-								  <div class="container">
-									<img src="images/latin/despecha.png">
-									<button class="btn" onclick = "staticChangeSong('images/latin/despecha.png',
-																			  'DESPECHÁ',
-																			  'Rosalía',
-																			  'audio/latin/despecha.mp3')">► Play</button>
-									<div class="desc">
-										<br>DESPECHÁ
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/latin/gatubela.png">
-									<button class="btn" onclick = "staticChangeSong('images/latin/gatubela.png',
-																			  'GATUBELA',
-																			  'KAROL G, Maldy',
-																			  'audio/latin/gatubela.mp3')">► Play</button>
-									<div class="desc">
-										<br>GATUBELA
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/latin/chachos.png">
-									<button class="btn" onclick = "staticChangeSong('images/latin/chachos.png',
-																			  'Los Chachos',
-																			  'Piso 21, Manuel Turizo',
-																			  'audio/latin/chachos.mp3')">► Play</button>
-									<div class="desc">
-										<br>Los Chachos
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/tendencias/bachata.png">
-									<button class="btn" onclick = "staticChangeSong('images/tendencias/bachata.png',
-																			  'La Bachata',
-																			  'Manuel Turizo',
-																			  'audio/tendencias/bachata.mp3')">► Play</button>
-									<div class="desc">
-										<br>La Bachata
-									</div>
-								  </div>
-							</div>
-
-
-						</div>
-                        <div class="apartado">
-							<div class="apartado_title">Usuarios que sigues <span class="material-symbols-outlined">Person</span></div>
-							<div class="covers">
-								<div class="container">
-									<a href=perfil-2.html><img src="https://pbs.twimg.com/profile_images/507819548834148352/jyx1JOS-_400x400.jpeg">
-									</a>
-                                    <div class="desc">
-										<br>Fran
-									</div>
-								  </div>
-									
-                                  <div class="container">
-									<a href=perfil-3.html><img src="https://s3.dia.es/medias/productimages/h65/h1f/11138300051486.jpg">
-									</a>
-                                    <div class="desc">
-										<br>Josefa Vargas
-									</div>
-								  </div>
-								</div>
-						<div class="apartado">
-								<div class="apartado_title">Tus playlists <span class="material-symbols-outlined">List</span></div>
-								<div id="playlist-master" class="covers">
-
-								</div>
-						</div>
-
-							<div class="footer-padding"></div>
-							<div class="footer-padding"></div>
-							<div class="footer-padding"></div>
-
-						</div>
 						
+
+                            
+							<div class="footer-padding"></div>
+							<div class="footer-padding"></div>
+							<div class="footer-padding"></div>
+
+						</div>
+				
 			</div>
 		
 
@@ -231,7 +154,7 @@
 			
 	<div class="player">
 		<div class="left">
-			<img src="https://cdn-icons-png.flaticon.com/512/0/375.png" alt="Portada del álbum" id="cover_art">
+			<img src="https://assets.audiomack.com/default-song-image.jpg" alt="Portada del álbum" id="cover_art">
 		</div>
 		<div class="right">
 		   <div class="top">

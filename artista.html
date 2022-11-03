@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Kendrick Lamar</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<!-- jquery-->
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<!-- jquery ui-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	</head>
+    
+	<body>
+		<div class="column">
+				<div id="logo">
+					<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
+				</div>
+				<div class="options-wrapper">
+					<!-- Options menu item -->
+				<div class="options-menu" id="goto-user-lists">
+					<!-- Icon --> 
+					<span class="material-symbols-outlined">format_list_bulleted</span>
+					<!-- Text -->
+					<span class="options-text">🔥 Tus listas 🔥 </span>
+				</div>
+				<!-- Options menu item-->
+				<div class="options-menu" id="goto-new-list"> 
+					<span class="material-symbols-outlined">add</span>
+					<span class="options-text">Crea una nueva lista 😎 </span>
+				</div>
+				</div>
+				<div class="policy-wrapper">
+					<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
+					<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 2 </a></div>
+				</div>
+		</div>
+        
+		<div class="content">
+				<div class="wrapper-top">
+					<div id="cred-bar">
+						<button id="sign_in"><div class="sign_button">SIGN IN</div></button>
+						<button id="log_in"><div class="sign_button">LOG IN</div></button>
+					</div>
+				</div>
+				<div class="apartados">
+                        <div class="apartado">
+                            <div class="perfil_head">
+
+                                <div class="perfil_title"> Kendrick Lamar</div>
+                                
+                            </div>
+                        </div>
+						<div class="apartado">
+							<div class="apartado_title">Canciones populares     <span class="material-symbols-outlined">Monitoring</span></div>
+							<div class="covers">
+								<div class="container">
+									<img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Deltron_3030_%28album_cover%29.jpg">
+									<button class="btn" onclick = "changeSong(14)">► Play</button>
+									<div class="desc">
+										<br>3030
+									</div>
+								  </div>
+									
+								  <div class="container">
+									<img src="https://m.media-amazon.com/images/I/81-vO7ZkqnL._SL1500_.jpg">
+									<button class="btn" onclick = "changeSong(2)">► Play</button>
+									<div class="desc">
+										<br>Sleep Now in the Fire
+									</div>
+								  </div>
+                                  <div class="container">
+									<img src="https://i.scdn.co/image/ab67616d0000b273d8b52e640a1a6ea619f1dc6e">
+									<button class="btn" onclick = "changeSong(27)">► Play</button>
+									<div class="desc">
+										<br>bag or die
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="https://m.media-amazon.com/images/I/81wSpWSGbVL._SS500_.jpg">
+									<button class="btn" onclick = "changeSong(8)">► Play</button>
+									<div class="desc">
+										<br>Lucid Dreams
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="https://i.scdn.co/image/ab67616d0000b2731a4f1ada93881da4ca8060ff">
+									<button class="btn" onclick = "changeSong(28)">► Play</button>
+									<div class="desc">
+										<br>Takin' It Back
+									</div>
+								  </div>
+							</div>
+						</div>
+						<div class="apartado">
+							<div class="apartado_title">Álbumes    <span class="material-symbols-outlined">Headphones</span></div>
+							<div class="covers">
+								<div class="container">
+									<a href=album.html><img src="https://m.media-amazon.com/images/I/81-vO7ZkqnL._SL1500_.jpg">
+									</a>
+                                    <div class="desc">
+										<br>The Battle of Los Angeles
+									</div>
+								  </div>
+									
+                                  <div class="container">
+									<a href=album-2.html><img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Deltron_3030_%28album_cover%29.jpg">
+									</a>
+                                    <div class="desc">
+										<br>3030
+									</div>
+								  </div>
+
+                                  
+							</div>
+						</div>
+						
+	
+                            
+							<div class="footer-padding"></div>
+							<div class="footer-padding"></div>
+							<div class="footer-padding"></div>
+
+						</div>
+				
+			</div>
+		
+
+		</div>
+
+
+			
+	<div class="player">
+		<div class="left">
+			<img src="https://assets.audiomack.com/default-song-image.jpg" alt="Portada del álbum" id="cover_art">
+		</div>
+		<div class="right">
+		   <div class="top">
+				<a class="song" id="song"></a>
+				<a class="artist" id="artist" ></a>
+			</div>
+			<div class="bottom">
+				<video controls="" _autoplay="" name="media" id="song_file"></video>
+			</div>
+		</div>
+	</div>
+		<script src="logic/userData.js"></script>
+		<script src="logic/music.js"></script>
+        <script src="logic/perfil.js"></script>
+	</body>
+</html>

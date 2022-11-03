@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Fran</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<!-- jquery-->
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<!-- jquery ui-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	</head>
+    
+	<body>
+		<div class="column">
+				<div id="logo">
+					<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
+				</div>
+				<div class="options-wrapper">
+					<!-- Options menu item -->
+				<div class="options-menu" id="goto-user-lists">
+					<!-- Icon --> 
+					<span class="material-symbols-outlined">format_list_bulleted</span>
+					<!-- Text -->
+					<span class="options-text">🔥 Tus listas 🔥 </span>
+				</div>
+				<!-- Options menu item-->
+				<div class="options-menu" id="goto-new-list"> 
+					<span class="material-symbols-outlined">add</span>
+					<span class="options-text">Crea una nueva lista 😎 </span>
+				</div>
+				</div>
+				<div class="policy-wrapper">
+					<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
+					<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 2 </a></div>
+				</div>
+		</div>
+        
+		<div class="content">
+				<div class="wrapper-top">
+					<div id="cred-bar">
+						<button id="sign_in"><div class="sign_button">SIGN IN</div></button>
+						<button id="log_in"><div class="sign_button">LOG IN</div></button>
+					</div>
+				</div>
+				<div class="apartados">
+                        <div class="apartado">
+                            <div class="perfil_head">
+                                <img src="https://pbs.twimg.com/profile_images/507819548834148352/jyx1JOS-_400x400.jpeg">
+                                <div class="perfil_title"> Fran</div>
+                                
+                            </div>
+                        </div>
+						<div class="apartado">
+							<div class="apartado_title">Artistas más escuchados     <span class="material-symbols-outlined">Monitoring</span></div>
+							<div class="covers">
+								<div class="container">
+									<a href=artista.html><img src="https://pyxis.nymag.com/v1/imgs/38c/a1d/97dfb294c65f69b61ceab6ca2561f54bd9-kendrick-lamar.rsquare.w330.jpg">
+									</a>
+                                    <div class="desc">
+										<br>Kendrick Lamar
+									</div>
+								  </div>
+									
+                                  <div class="container">
+									<a href=artista-2.html><img src="https://pyxis.nymag.com/v1/imgs/fa9/306/c29485b612cbbf743f64d3dbe667762f61-13-kanye-west-tlop.rsquare.w700.jpg">
+									</a>
+                                    <div class="desc">
+										<br>Kanye West
+									</div>
+								  </div>
+                                  <div class="container">
+									<a href=artista-3.html><img src="https://i.scdn.co/image/ab6761610000e5ebb00f2e31d509ddc6fa0eb24b">
+									</a>
+                                    <div class="desc">
+										<br>Denzel Curry
+									</div>
+								  </div>
+
+                                  
+							</div>
+						</div>
+						<div class="apartado">
+							<div class="apartado_title">Canciones más escuchadas     <span class="material-symbols-outlined">Monitoring</span></div>
+							<div class="covers">
+								<div class="container">
+									<img src="https://rocksesion.files.wordpress.com/2015/10/118-estopa.jpg">
+									<button class="btn" onclick = "changeSong(0)">► Play</button>
+									<div class="desc">
+										<br>Por la Raja de tu Falda
+									</div>
+								  </div>
+									
+								  <div class="container">
+									<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/%22Make_It_Bun_Dem%22_by_Skrillex_cover.jpg">
+									<button class="btn" onclick = "changeSong(10)">► Play</button>
+									<div class="desc">
+										<br>Make It Bum Dem
+									</div>
+								  </div>
+                                  <div class="container">
+									<img src="https://i.scdn.co/image/ab67616d0000b273d8b52e640a1a6ea619f1dc6e">
+									<button class="btn" onclick = "changeSong(27)">► Play</button>
+									<div class="desc">
+										<br>bag or die
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="https://m.media-amazon.com/images/I/81wSpWSGbVL._SS500_.jpg">
+									<button class="btn" onclick = "changeSong(8)">► Play</button>
+									<div class="desc">
+										<br>Lucid Dreams
+									</div>
+								  </div>
+								  <div class="container">
+									<img src="https://upload.wikimedia.org/wikipedia/en/4/4d/The_life_of_pablo_alternate.jpg">
+									<button class="btn" onclick = "changeSong(4)">► Play</button>
+									<div class="desc">
+										<br>Freestyle 4
+									</div>
+								  </div>
+							</div>
+						</div>
+						
+
+                            
+							<div class="footer-padding"></div>
+							<div class="footer-padding"></div>
+							<div class="footer-padding"></div>
+
+						</div>
+				
+			</div>
+		
+
+		</div>
+
+
+			
+	<div class="player">
+		<div class="left">
+			<img src="https://assets.audiomack.com/default-song-image.jpg" alt="Portada del álbum" id="cover_art">
+		</div>
+		<div class="right">
+		   <div class="top">
+				<a class="song" id="song"></a>
+				<a class="artist" id="artist" ></a>
+			</div>
+			<div class="bottom">
+				<video controls="" _autoplay="" name="media" id="song_file"></video>
+			</div>
+		</div>
+	</div>
+		<script src="logic/userData.js"></script>
+		<script src="logic/music.js"></script>
+        <script src="logic/perfil.js"></script>
+	</body>
+</html>
