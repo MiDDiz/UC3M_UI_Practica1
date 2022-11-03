@@ -140,7 +140,7 @@ function populatePlaylist(){
 				<button class="rmv" onclick="removeElement('${song.title}')">
 					<span class="material-symbols-outlined">delete</span>
 				</button>
-				<button class="play" onclick = "changeSong('${song.cover}',
+				<button class="play" onclick = "staticChangeSong('${song.cover}',
 															'${song.title}',
 															'${song.artist}',
 															'${song.path}')">

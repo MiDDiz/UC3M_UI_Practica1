@@ -92,7 +92,7 @@ function fillLikedSongs() {
 		$("#liked-master").append(`
 		<div class="container">
 		<img src="${song.cover}">
-		<button class="btn" onclick = "changeSong('${song.cover}',
+		<button class="btn" onclick = "staticChangeSong('${song.cover}',
 															  '${song.title}',
 															  '${song.artist}',
 															  '${song.path}')">

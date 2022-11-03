@@ -10,6 +10,7 @@
 		<!-- jquery ui-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		
 	</head>
     
 	<body>
@@ -106,7 +107,7 @@
 							<div class="covers">
 								<div class="container">
 									<img src="https://static.qobuz.com/images/covers/oc/4v/avm8t4zm04voc_600.jpg">
-									<button class="btn" onclick = "changeSong('https://static.qobuz.com/images/covers/oc/4v/avm8t4zm04voc_600.jpg',
+									<button class="btn" onclick = "staticChangeSong('https://static.qobuz.com/images/covers/oc/4v/avm8t4zm04voc_600.jpg',
 																			  'Vaudeville Villain',
 																			  'Viktor Vaughn',
 																			  'audio/perfil/vv.mp3')">► Play</button>
@@ -117,7 +118,7 @@
 									
 								  <div class="container">
 									<img src="https://upload.wikimedia.org/wikipedia/en/4/4d/The_life_of_pablo_alternate.jpg">
-									<button class="btn" onclick = "changeSong('https://upload.wikimedia.org/wikipedia/en/4/4d/The_life_of_pablo_alternate.jpg',
+									<button class="btn" onclick = "staticChangeSong('https://upload.wikimedia.org/wikipedia/en/4/4d/The_life_of_pablo_alternate.jpg',
 																			  'Freestyle 4',
 																			  'Kanye West',
 																			  'audio/perfil/ye.mp3')">► Play</button>
@@ -127,7 +128,7 @@
 								  </div>
                                   <div class="container">
 									<img src="https://i.scdn.co/image/ab67616d0000b273d8b52e640a1a6ea619f1dc6e">
-									<button class="btn" onclick = "changeSong('https://i.scdn.co/image/ab67616d0000b273d8b52e640a1a6ea619f1dc6e',
+									<button class="btn" onclick = "staticChangeSong('https://i.scdn.co/image/ab67616d0000b273d8b52e640a1a6ea619f1dc6e',
 																			  'bag or die',
 																			  'bbno$',
 																			  'audio/novedades/bagordie.mp3')">► Play</button>
@@ -137,7 +138,7 @@
 								  </div>
 								  <div class="container">
 									<img src="https://m.media-amazon.com/images/I/81wSpWSGbVL._SS500_.jpg">
-									<button class="btn" onclick = "changeSong('https://m.media-amazon.com/images/I/81wSpWSGbVL._SS500_.jpg',
+									<button class="btn" onclick = "staticChangeSong('https://m.media-amazon.com/images/I/81wSpWSGbVL._SS500_.jpg',
 																			  'Lucid Dreams',
 																			  'Juice WRLD',
 																			  'audio/apartado2/luciddreams.mp3')">► Play</button>
@@ -147,7 +148,7 @@
 								  </div>
 								  <div class="container">
 									<img src="https://m.media-amazon.com/images/I/81vqCvM2EJL._SL1200_.jpg">
-									<button class="btn" onclick = "changeSong('https://m.media-amazon.com/images/I/81vqCvM2EJL._SL1200_.jpg',
+									<button class="btn" onclick = "staticChangeSong('https://m.media-amazon.com/images/I/81vqCvM2EJL._SL1200_.jpg',
 																			  'Feel The Love',
 																			  'KIDS SEE GHOSTS ft. Pusha T',
 																			  'audio/perfil/ftl.mp3')">► Play</button>
@@ -162,7 +163,7 @@
 							<div id="liked-master" class="covers">
 								<div class="container">
 									<img src="images/tendencias/monotonia.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/monotonia.png',
+									<button class="btn" onclick = "staticChangeSong('images/tendencias/monotonia.png',
 																			  'Monotonía',
 																			  'Shakira, Ozuna',
 																			  'audio/tendencias/monotonia.mp3')">► Play</button>
@@ -173,7 +174,7 @@
 									
 								  <div class="container">
 									<img src="images/latin/despecha.png">
-									<button class="btn" onclick = "changeSong('images/latin/despecha.png',
+									<button class="btn" onclick = "staticChangeSong('images/latin/despecha.png',
 																			  'DESPECHÁ',
 																			  'Rosalía',
 																			  'audio/latin/despecha.mp3')">► Play</button>
@@ -183,7 +184,7 @@
 								  </div>
 								  <div class="container">
 									<img src="images/latin/gatubela.png">
-									<button class="btn" onclick = "changeSong('images/latin/gatubela.png',
+									<button class="btn" onclick = "staticChangeSong('images/latin/gatubela.png',
 																			  'GATUBELA',
 																			  'KAROL G, Maldy',
 																			  'audio/latin/gatubela.mp3')">► Play</button>
@@ -193,7 +194,7 @@
 								  </div>
 								  <div class="container">
 									<img src="images/latin/chachos.png">
-									<button class="btn" onclick = "changeSong('images/latin/chachos.png',
+									<button class="btn" onclick = "staticChangeSong('images/latin/chachos.png',
 																			  'Los Chachos',
 																			  'Piso 21, Manuel Turizo',
 																			  'audio/latin/chachos.mp3')">► Play</button>
@@ -203,7 +204,7 @@
 								  </div>
 								  <div class="container">
 									<img src="images/tendencias/bachata.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/bachata.png',
+									<button class="btn" onclick = "staticChangeSong('images/tendencias/bachata.png',
 																			  'La Bachata',
 																			  'Manuel Turizo',
 																			  'audio/tendencias/bachata.mp3')">► Play</button>
@@ -293,6 +294,7 @@
 	</div>
 		<script src="logic/userData.js"></script>
 		<script src="logic/music.js"></script>
+		<script src="logic/music_helper.js"></script>
         <script src="logic/perfil.js"></script>
 	</body>
 </html>

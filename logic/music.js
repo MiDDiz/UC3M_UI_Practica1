@@ -49,11 +49,8 @@ class SongHandler{
 		return (found);
 	}
 
+
 }
-
-
-
-
 
 var SongMaster = new SongHandler([
 	new Song("../audio/apartado1/estopa.mp3", "Por la Raja de tu Falda", "Estopa", "https://rocksesion.files.wordpress.com/2015/10/118-estopa.jpg"),
