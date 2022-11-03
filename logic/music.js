@@ -51,39 +51,9 @@ class SongHandler{
 
 }
 
-function changeSong(n) {
-    var coverArt = document.getElementById("cover_art");
-    var songTitle = document.getElementById("song");
-    var artistName = document.getElementById("artist");
-    var songFile = document.getElementById("song_file");
-    coverArt.src = SongMaster.songs[n].cover;
-    songTitle.innerHTML = SongMaster.songs[n].title;
-    artistName.innerHTML = SongMaster.songs[n].artist;
-    songFile.src = SongMaster.songs[n].path;
-    songFile.play();
-	$(".footer").hide()
-	$(".player").show()	
 
-}
 
-function staticChangeSong(cover, title, artist, path) {
-    var coverArt = document.getElementById("cover_art");
-    var songTitle = document.getElementById("song");
-    var artistName = document.getElementById("artist");
-    var songFile = document.getElementById("song_file");
-    coverArt.src = cover;
-    songTitle.innerHTML = title;
-    artistName.innerHTML = artist;
-    songFile.src = path;
-    songFile.play();
-	$(".footer").hide()
-	$(".player").show()	
 
-}
-
-function getElems(n){
-	return(SongMaster.songs[n])
-}
 
 var SongMaster = new SongHandler([
 	new Song("../audio/apartado1/estopa.mp3", "Por la Raja de tu Falda", "Estopa", "https://rocksesion.files.wordpress.com/2015/10/118-estopa.jpg"),
@@ -121,3 +91,37 @@ var SongMaster = new SongHandler([
 	new Song("../audio/novedades/bagordie.mp3", "bag or die", "bbno$", "https://i.scdn.co/image/ab67616d00001e02d8b52e640a1a6ea619f1dc6e"),
 	new Song("../audio/novedades/meghan.mp3", "Takin It Back", "Meghan Trainor", "https://i.scdn.co/image/ab67616d00001e021a4f1ada93881da4ca8060ff")
 ]);
+
+function changeSong(n) {
+    var coverArt = document.getElementById("cover_art");
+    var songTitle = document.getElementById("song");
+    var artistName = document.getElementById("artist");
+    var songFile = document.getElementById("song_file");
+    coverArt.src = SongMaster.songs[n].cover;
+    songTitle.innerHTML = SongMaster.songs[n].title;
+    artistName.innerHTML = SongMaster.songs[n].artist;
+    songFile.src = SongMaster.songs[n].path;
+    songFile.play();
+	$(".footer").hide()
+	$(".player").show()	
+
+}
+
+function staticChangeSong(cover, title, artist, path) {
+    var coverArt = document.getElementById("cover_art");
+    var songTitle = document.getElementById("song");
+    var artistName = document.getElementById("artist");
+    var songFile = document.getElementById("song_file");
+    coverArt.src = cover;
+    songTitle.innerHTML = title;
+    artistName.innerHTML = artist;
+    songFile.src = path;
+    songFile.play();
+	$(".footer").hide()
+	$(".player").show()	
+
+}
+
+function getElems(n){
+	return(SongMaster.songs[n])
+}

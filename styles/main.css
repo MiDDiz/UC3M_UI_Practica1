@@ -1,3 +1,4 @@
+
 @font-face {
 	font-family: 'password';
 	font-style: normal;
@@ -58,7 +59,7 @@ button {
 	position: fixed;
  	flex-direction: column;
 	width: 25%;
-	height:	92%;
+	height:	calc(100% - 80px);
 	background-color: #233243;
 }
 .expanded {
@@ -290,7 +291,7 @@ button {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 8%;
+	height: 80px;
 	margin: 0;
 	display: flex;
 }

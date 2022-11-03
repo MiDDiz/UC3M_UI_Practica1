@@ -148,10 +148,6 @@ function startSearch(){
 
 	var querry = $("#search-bar").val();
 	// If empty querry return site to normal:
-	if (querry == "")
-	{
-		location.reload();
-	}
 	// Store as last querry
 	LastQuerry = querry;
 	// Get all matching songs
@@ -187,6 +183,11 @@ function startSearch(){
 			</div>
 		`)
 	});
+	$(".covers").append(`
+				<div class="footer-padding"></div>
+				<div class="footer-padding"></div>
+				<div class="footer-padding"></div>
+							`);
 }
 
 

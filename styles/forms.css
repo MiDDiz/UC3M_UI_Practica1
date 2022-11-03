@@ -1,3 +1,11 @@
+/*
+ * Sabemos que se comentó en clase que juntaramos todas las hojas de estilos en una,
+ * sin embargo el estilo de los formularios de logueo y registro difieren en tanto que no
+ * podemos mergear sin causar grandes cambios en el esquema de la aplicación.
+
+ * Es por esto que decidimos mantener forms.css
+*/
+
 body {
 	display: flexbox;
 	flex-direction: column;
