@@ -91,7 +91,7 @@ function addFunctionalities(hooks)
 	}
 
 	$("#goto-user-lists").click(() => {
-		openPage("../canciones.html");
+		openPage("../perfil.html");
 	});
 
 	$("#goto-new-list").click(() => {

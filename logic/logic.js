@@ -30,11 +30,23 @@ function addFunctionalities(hooks)
 	}
 
 	$("#goto-user-lists").click(() => {
-		openPage("../canciones.html");
+		if (localStorage.getItem("logged") == null)
+		{
+			alert("Tienes que loggearte primero!");
+
+		}else {
+			openPage("../perfil.html");
+		}
 	});
 
 	$("#goto-new-list").click(() => {
+		if (localStorage.getItem("logged") == null)
+		{
+			alert("Tienes que loggearte primero!");
+
+		}else {
 		openPage("../new_list_form.html");
+		}
 	});
 
 	$("#search-bar").keyup(() => {
@@ -67,7 +79,7 @@ function closeSesion() {
 		  buttons: {
 			Ok: function() {
 				localStorage.removeItem("logged")
-				location.reload();
+				openPage("../index.html")
 			  	$( this ).dialog( "close" );
 			},
 			No: function() {
@@ -101,6 +113,16 @@ function checkForLogin(hooks){
 		$(".footer").hide();
 		$(".player").show();
 		$(".search-box-wrapper").show();
+
+		var contador = 0
+		$('.apartado_title').each(function(i, obj) {
+			if (contador == 0){obj.innerHTML = "Tendencias para ti<span class='material-symbols-outlined'>play_arrow"}
+			if (contador == 1){obj.innerHTML = "Novedades para ti<span class='material-symbols-outlined'>play_arrow"}
+			if (contador == 2){obj.innerHTML = "Tus hits latinos<span class='material-symbols-outlined'>play_arrow"}
+			contador += 1;
+
+		});
+
 	}
 	else {
 		// if not hide player and search
@@ -116,9 +138,7 @@ function init()
 	addFunctionalities(hooks);
 	generateTimers();
 	checkForLogin(hooks);
-	$('.apartado_title').each(function(i, obj) {
-		obj.innerHTML = "si"
-	});
+
 	// Hide modal
 	$( "#dialog-message" ).hide();
 }
@@ -151,7 +171,7 @@ function startSearch(){
 		$(".covers").append(`
 			<div class="container">
 				<img src="${song.cover}">
-				<button class="btn" onclick = "changeSong('${song.cover}',
+				<button class="btn" onclick = "staticChangeSong('${song.cover}',
 																	  '${song.title}',
 																	  '${song.artist}',
 																	  '${song.path}')">
@@ -224,5 +244,6 @@ function generateTimers(){
 	startTimer(2000, time2);
 	startTimer(300, time3);
 }
+
 
 init();

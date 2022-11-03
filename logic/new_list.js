@@ -31,11 +31,18 @@ function addFunctionalities(hooks)
 	}
 
 	$("#goto-user-lists").click(() => {
-		openPage("../canciones.html");
+			openPage("../canciones.html");
 	});
 
 	$("#goto-new-list").click(() => {
-		openPage("../canciones.html");
+		if (localStorage.getItem("logged") == null)
+		{
+			alert("Tienes que loggearte primero!");
+
+		}
+		else {
+			openPage("../index.html");
+		}
 	});
 
 	$("#search-bar").keyup(() => {
@@ -66,7 +73,7 @@ function closeSesion() {
 		  buttons: {
 			Ok: function() {
 				localStorage.removeItem("logged")
-				location.reload();
+				openPage("../index.html")
 			  	$( this ).dialog( "close" );
 			},
 			No: function() {

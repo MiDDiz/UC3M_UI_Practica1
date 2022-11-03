@@ -52,7 +52,7 @@ function __init__() {
 	// hide dialog.
 	$( "#dialog-message" ).hide();
 	$("#goto-user-lists").click(() => {
-		openPage("../canciones.html");
+		openPage("../perfil.html");
 	});
 	
 	$("#goto-new-list").click(() => {

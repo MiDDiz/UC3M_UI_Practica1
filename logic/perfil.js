@@ -1,10 +1,13 @@
 function __init__() {
+
+	$( "#dialog-message" ).hide();
+
 	$("#goto-user-lists").click(() => {
-		openPage("../canciones.html");
+		openPage("../index.html");
 	});
 	
 	$("#goto-new-list").click(() => {
-		openPage("../canciones.html");
+		openPage("../new_list_form.html");
 	});
 	// redirrection if not logged
 	if (localStorage.getItem("logged") == null) {
