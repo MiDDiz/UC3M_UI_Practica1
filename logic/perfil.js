@@ -13,6 +13,7 @@ function __init__() {
 	var hooks = addHooks();
 	changeHeader(hooks);
 	fillLikedSongs();
+	fillPlaylists();
 }
 
 function addHooks() 
@@ -100,4 +101,33 @@ function fillLikedSongs() {
 		`)
 	});
 }
+
+function fillPlaylists() {
+	var userCookie = JSON.parse(localStorage.getItem(localStorage.getItem("logged")));
+	var user = new UserData();
+	user.populateFromJSON(userCookie);
+	user.user_lists.forEach((list, index) => {
+		console.log(list);
+		$("#playlist-master").append(`
+		<div class="container">
+		<img src="${list.songList[0].cover}">
+		<button class="btn" onclick = "goToList(${index})">
+															  ► Ir</button>
+			<div class="desc">
+				<br>${list.titulo}
+			</div>
+		</div>
+		`);
+	});
+}
+
+function goToList(indice){
+	var userCookie = JSON.parse(localStorage.getItem(localStorage.getItem("logged")));
+	var user = new UserData();
+	user.populateFromJSON(userCookie);
+	// sacar la lista indicada.
+	localStorage.setItem("openList", indice);
+	openPage("../canciones.html");
+}
+
 __init__();

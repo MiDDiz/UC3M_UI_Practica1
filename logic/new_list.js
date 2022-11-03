@@ -1,3 +1,5 @@
+let list = new List([], "");
+
 function addHooks() 
 {
 	// namespace for any hook that we need.
@@ -112,6 +114,9 @@ function init()
 	hooks = addHooks();
 	addFunctionalities(hooks);
 	checkForLogin(hooks);
+
+	$("#generate-list").on( "click", saveListInUser)
+
 	// Hide modal
 	$( "#dialog-message" ).hide();
 }
@@ -151,8 +156,41 @@ function startSearch(){
 		`)
 	});
 }
+
+function saveListInUser() {
+	if (!$("#list-title").val()){
+		alert("El titulo no ha de estar vacío!");
+		return ;
+	}
+	if (list.songList.length == 0){
+		alert("La lista no puede estar vacía!");
+		return ;
+	}
+	list.titulo = $("#list-title").val();
+	var userCookie = JSON.parse(localStorage.getItem(localStorage.getItem("logged")));
+	var user = new UserData();
+	user.populateFromJSON(userCookie);
+	user.appendList(list);
+	user.saveCookie();
+
+	openPage("../perfil.html")
+}
+
 function addToList(title){
-	SongMaster.find
+	console.log(`Añadiendo title: ${title}`)
+	/* Meter animacion de añadido o q se yo */
+	let song = SongMaster.findByTitle(title);
+	console.log(song);
+	// Check if already in list
+	for (let i = 0; i < list.length; i++) {
+		const songInList = list[i];
+		if (songInList.title = song.title)
+		{
+			console.log("Song already in playlist!");
+			return ;
+		}
+	}
+	list.songList.push(song);
 }
 
 init();

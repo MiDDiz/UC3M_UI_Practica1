@@ -32,6 +32,10 @@ class UserData {
 		return (liked);
 	}
 
+	appendList(list){
+		this.user_lists.push(list);
+	}
+
 	appendSong(song){
 		this.liked_songs.push(song);
 		this.saveCookie();

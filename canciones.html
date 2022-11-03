@@ -4,7 +4,14 @@
 		<meta charset="UTF-8">
 		<title id = "titulo">Lista de Reproducción</title>
 		<link rel="stylesheet" href="styles/main.css">
+		<!-- Icons -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- jquery-->
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<!-- jquery ui-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	</head>
     
 	<body>
@@ -41,52 +48,26 @@
             <div class="apartados">
                     <div class="apartado">
                         <div class="perfil_head">
-                            <img src="https://bobjames.com/wp-content/themes/soundcheck/images/default-album-artwork.png">
+                            <img id="playlist-img" src="https://bobjames.com/wp-content/themes/soundcheck/images/default-album-artwork.png">
                             <div class="perfil_title"> Tu Playlist</div>
                             
                         </div>
                     </div>
                     <div class="apartado">
                         <div class = "listado-canciones">
-                            <div id="1" class = "cancion-item" draggable="true">
-                                <img src="https://files.radio.co/humorous-skink/staging/default-artwork.png" alt="">
-                                <button class="rmv" onclick="removeElement('1')"><span class="material-symbols-outlined">delete</span></button>
-                                <button class="play" onclick = "changeSong('images/tendencias/monotonia.png',
-                                'Monotonía',
-                                'Shakira, Ozuna',
-                                'audio/tendencias/monotonia.mp3')">►</button>
-                                <div class="song-text">
-                                <br>1
-                                </div>
-
-                            </div>
-                              
-                            <div id="2" class = "cancion-item" draggable="true">
-                                <img src="https://files.radio.co/humorous-skink/staging/default-artwork.png" alt="">
-                                <button class="rmv" onclick="removeElement('2', 'listado-canciones')"><span class="material-symbols-outlined">delete</span></button>
-                                <br>2
-                            </div>
-                            <div id="3" class = "cancion-item" draggable="true">
-                                <img src="https://files.radio.co/humorous-skink/staging/default-artwork.png" alt="">
-                                <button class="rmv" onclick="removeElement('3', 'listado-canciones')"><span class="material-symbols-outlined">delete</span></button>
-                                <br>3
-                            </div>
-                            <div id="4" class = "cancion-item" draggable="true">
-                                <img src="https://files.radio.co/humorous-skink/staging/default-artwork.png" alt="">
-                                <button class="rmv" onclick="removeElement('4', 'listado-canciones')"><span class="material-symbols-outlined">delete</span></button>
-                                <br>4
-                            </div>
-                              
-                            <div id="5" class = "cancion-item" draggable="true">
-                                <img src="https://files.radio.co/humorous-skink/staging/default-artwork.png" alt="">
-                                <button class="rmv" onclick="removeElement('5', 'listado-canciones')"><span class="material-symbols-outlined">delete</span></button>
-                                <br>5
-                            </div>
-                            <div id="6" class = "cancion-item" draggable="true">
-                                <img src="https://files.radio.co/humorous-skink/staging/default-artwork.png" alt="">
-                                <button class="rmv" onclick="removeElement('6', 'listado-canciones')"><span class="material-symbols-outlined">delete</span></button>
-                                <br>6
-                            </div>
+							<!--
+								<div id="1" class = "cancion-item" draggable="true">
+									<img src="https://files.radio.co/humorous-skink/staging/default-artwork.png" alt="">
+									<button class="rmv" onclick="removeElement('1')"><span class="material-symbols-outlined">delete</span></button>
+									<button class="play" onclick = "changeSong('images/tendencias/monotonia.png',
+									'Monotonía',
+									'Shakira, Ozuna',
+									'audio/tendencias/monotonia.mp3')">►</button>
+									<div class="song-text">
+										<br>1
+									</div>
+								</div>
+							-->
                         </div>
                     </div>
             </div>
@@ -105,9 +86,11 @@
                 </div>
             </div>
         </div>
+		<script src="logic/lists.js"></script>
+		<script src="logic/music.js"></script>
+		<script src="logic/userData.js"></script>
         <script src="logic/song_manager.js"></script>
-		<script src="logic/logic.js"></script>
 		<script src="logic/play.js"></script>
-        <script src="logic/profile.js"></script>
+        <script src="logic/canciones.js"></script>
 	</body>
 </html>

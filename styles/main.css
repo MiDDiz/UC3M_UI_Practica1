@@ -53,6 +53,7 @@ button {
 /* Lef column: menu */
 
 .left-column {
+	min-width: 110px;
 	display: flex;
 	position: fixed;
  	flex-direction: column;
@@ -147,6 +148,8 @@ button {
 }
 
 .wrapper-top {
+	min-height: 75px;
+	min-width: 450px;
 	display: flex;
 	flex-wrap: wrap;
 	position: fixed;
@@ -169,7 +172,8 @@ button {
 	width: auto;
 	display: flex;
 	flex-wrap: wrap;
-	height: 7%;
+	min-height: 75px;
+	height: inherit;
 }
 
 .usr_img_btn img {
@@ -238,8 +242,8 @@ button {
 	font-weight: 100;
   }
   .btn-search{
-	width: 50px;
-	height: 50px;
+	width: 3rem;
+	height: 3rem;
 	border-style: none;
 	font-size: 20px;
 	font-weight: bold;
@@ -269,6 +273,7 @@ button {
   .search-box-wrapper{
 	margin-left: auto;
 	margin-right: 60%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -539,6 +544,12 @@ ul > .separator {
 	padding-bottom: 0.5em;
 	border-radius: 1em;
 }
+
+.info-btn:hover{
+	opacity: 80%;
+	cursor: pointer;
+}
+
 .editable {
 	color: grey;
 	background-color: white;

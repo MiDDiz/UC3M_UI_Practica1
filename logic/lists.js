@@ -11,6 +11,10 @@ class List {
 		this.title = title;
 	}
 
+	addSong (song){
+		var songToAdd = song.title;
+		
+	}
 	// Remove element from list
 	removeSong (removeSong) {
 		var removeTitle = removeSong.title;
@@ -27,8 +31,24 @@ class List {
 			return ;
 			// Remove element
 		this.songList.splice(index, 1);
+
 	}
 
+	removeSongTitle(removeTitle){
+		let index;
+		for (index = 0; index <= this.songList.length; index++) {
+			if (index == this.songList.length)
+				break ;
+			const song = this.songList[index];
+			if (song.title == removeTitle)
+				break ; 
+		}
+		// no song found
+		if (index == this.songList.length)
+			return ;
+			// Remove element
+		this.songList.splice(index, 1);
+	}
 }
 
 /* 
