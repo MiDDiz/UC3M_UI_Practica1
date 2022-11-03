@@ -34,7 +34,7 @@ function addFunctionalities(hooks)
 	});
 
 	$("#goto-new-list").click(() => {
-		openPage("../canciones.html");
+		openPage("../new_list_form.html");
 	});
 
 	$("#search-bar").keyup(() => {

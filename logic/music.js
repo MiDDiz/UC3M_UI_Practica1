@@ -31,11 +31,8 @@ class SongHandler{
 			}
 			return null;
 		  });
-		  
-
 		return (uniqueMatches);
 	}
-
 	
 	findByTitle(title) {
 		var found = null;
@@ -77,7 +74,7 @@ var SongMaster = new SongHandler([
 	new Song("../audio/tendencias/monotonia.mp3", "Monotonía", "Shakira, Ozuna", "https://i.scdn.co/image/ab67616d00001e0227b5b57343431306a7f9daec"),
 
 	new Song("../audio/tendencias/missyou.mp3", "Miss You", "Oliver Tree", "https://i.scdn.co/image/ab67616d00001e025b1bff1152ef6d402c9b75a8"),
-	new Song("../audio/tendencias/quevedo.mp3", "No Me Digas Nada", "Quevedo", "https://i.scdn.co/image/ab67616d00001e02f0031372a77c80ba720c5f45"),
+	new Song("../audio/tendencias/quevedo.mp3", "No Me Digas Nada", "Quevedo", "https://i.scdºn.co/image/ab67616d00001e02f0031372a77c80ba720c5f45"),
 	new Song("../audio/tendencias/bachata.mp3", "La Bachata", "Manuel Turizo", "https://i.scdn.co/image/ab67616d00001e02c9f744b0d62da795bc21d04a"),
 	new Song("../audio/tendencias/unaveces.mp3", "Una Y Mil Veces", "Omar Montes, C Tangana", "https://i.scdn.co/image/ab67616d00001e024b500117f7e330da4ed5e520"),
 	new Song("../audio/novedades/aston.mp3", "Aston Martin Truck", "Roddy Rich", "https://i.scdn.co/image/ab67616d00001e027494051a39409e94bd45c06c"),
@@ -86,4 +83,4 @@ var SongMaster = new SongHandler([
 	new Song("../audio/novedades/lavender.mp3", "Lavender Haze", "Taylor Swift", "https://i.scdn.co/image/ab67616d00001e02bb54dde68cd23e2a268ae0f5"),
 	new Song("../audio/novedades/bagordie.mp3", "bag or die", "bbno$", "https://i.scdn.co/image/ab67616d00001e02d8b52e640a1a6ea619f1dc6e"),
 	new Song("../audio/novedades/meghan.mp3", "Takin It Back", "Meghan Trainor", "https://i.scdn.co/image/ab67616d00001e021a4f1ada93881da4ca8060ff")
-])
+]);

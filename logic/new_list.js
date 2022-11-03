@@ -140,7 +140,7 @@ function startSearch(){
 																	  ► Play</button>
 				<div class="desc">
 					<br>${song.title} 
-					<button class="like-btn" id="like-${song.title}" onclick="liked('${song.title}')">
+					<button class="like-btn" id="like-${song.title}" onclick="addToList('${song.title}')">
 						<span class="material-symbols-outlined">
 						add
 						</span>
@@ -151,6 +151,8 @@ function startSearch(){
 		`)
 	});
 }
-
+function addToList(title){
+	SongMaster.find
+}
 
 init();
