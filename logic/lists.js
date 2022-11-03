@@ -11,6 +11,10 @@ class List {
 		this.title = title;
 	}
 
+	addSong (song){
+		var songToAdd = song.title;
+		
+	}
 	// Remove element from list
 	removeSong (removeSong) {
 		var removeTitle = removeSong.title;

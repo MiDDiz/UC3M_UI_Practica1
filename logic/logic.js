@@ -116,6 +116,9 @@ function init()
 	addFunctionalities(hooks);
 	generateTimers();
 	checkForLogin(hooks);
+	$('.apartado_title').each(function(i, obj) {
+		obj.innerHTML = "si"
+	});
 	// Hide modal
 	$( "#dialog-message" ).hide();
 }
