@@ -2,12 +2,24 @@
 <html>
 	<head>
 		<title>Spotifyn't registro</title>
-		<link rel="stylesheet" href="styles/index.css">
+		<link rel="stylesheet" href="styles/main.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<link rel="stylesheet" href="styles/forms.css">
-
+		<!-- jquery-->
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<!-- jquery ui-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	</head>
 	<body>
+		<div id="dialog-message" title="Error al guardar informacion">
+			<p>
+			  <span class="ui-icon ui-icon-circle-cross"></span>
+			  Error en el registro.
+			</p>
+			<p id="error-info">
+			</p>
+		</div>
 		<h1>Formulario de Registro</h1>
 			<form class="form" id="REGISTRO">
 				<div class="form-field">
@@ -43,7 +55,7 @@
 					<input type="checkbox" id="terms_conditions" name="terms_conditions" value="OK">
 				</div>
 				<div class="form-button-wrapper">
-					<button class="form-button" id="registro" type="push" form="REGISTRO" value="Registrarme">Registrarse</button>
+					<button class="form-button" id="registro" type="button" form="REGISTRO" value="Registrarme">Registrarse</button>
 					<button class="form-button" id="borrar-registro" type="reset" form="REGISTRO" value="Eliminar">Borrar</button>
 				</div>
 				<div class="form-external">
@@ -51,16 +63,8 @@
 					<a href="https://www.facebook.com"><img src="images/facebook_logo.png">  Sign in </a>
 				</div>
 			</form>
-		<div class="footer">
-			<div class="footer-msg">
-				<a href="index.html">
-					<span class="material-symbols-outlined">arrow_back</span>
-					Vuelve a la pagina principal 
-					<span class="material-symbols-outlined">arrow_back</span>
-				</a>
-			</div>
-		</div>
-		<div class="footer-padding"></div>
+		<div class="form-back-button"><a href="index.html">Volver al inicio </a></div>
+
 		<script src="logic/userData.js"></script>
 		<script src="logic/signin.js"></script>
 

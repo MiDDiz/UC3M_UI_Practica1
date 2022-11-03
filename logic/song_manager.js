@@ -38,9 +38,3 @@ function getDragAfterElement(container, y) {
   }, { offset: Number.NEGATIVE_INFINITY }).element
 }
 
-function removeElement(id){
-  var removable = document.getElementById(id);
-  var listado = removable.parentNode;
-  listado.removeChild(removable);
-
-}

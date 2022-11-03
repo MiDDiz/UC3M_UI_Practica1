@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title id = "titulo">3030</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	</head>
+    
+	<body>
+        <div class="column">
+            <div id="logo">
+                <img class="logo-src" src="images/logo_spoti.png" alt="Logo">
+            </div>
+            <div class="options-wrapper">
+                <div class="options-menu"> 
+                    <span class="material-symbols-outlined">refresh</span>
+                    <span class="options-text">Volumen </span>
+                </div>
+                <div class="options-menu"> 
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span class="options-text">Me gusta </span></div>
+                <div class="options-menu"> 
+                    <span class="material-symbols-outlined">close</span>
+                    <span class="options-text">Me gusta </span>
+                
+                </div>
+            </div>
+            <div class="policy-wrapper">
+                <div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
+                <div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 2 </a></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="wrapper-top">
+                <div id="cred-bar">
+                    <button id="sign_in"><div class="sign_button">SIGN IN</div></button>
+                    <button id="log_in"><div class="sign_button">LOG IN</div></button>
+                </div>
+            </div>
+            <div class="apartados">
+                    <div class="apartado">
+                        <div class="perfil_head">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Deltron_3030_%28album_cover%29.jpg">
+                            <div class="perfil_title"> 3030</div>
+                            
+                        </div>
+                    </div>
+                    <div class="apartado">
+                        <div class = "listado-canciones">
+                            <div id="1" class = "cancion-item" draggable="false">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Deltron_3030_%28album_cover%29.jpg" alt="">
+                                <button class="play" onclick = "changeSong(14)">►</button>
+                                <div class="song-text">
+                                <br>3030
+                                </div>
+                            </div>   
+                            <div id="1" class = "cancion-item" draggable="false">
+                                <img src="https://i1.sndcdn.com/artworks-A7UTCIJdbD3w-0-t500x500.jpg" alt="">
+                                <button class="play" onclick = "changeSong(3)">►</button>
+                                <div class="song-text">
+                                <br>Fire Escape in the Sea
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="player">
+            <div class="left">
+                <img src="https://assets.audiomack.com/default-song-image.jpg" alt="Portada del álbum" id="cover_art">
+            </div>
+            <div class="right">
+               <div class="top">
+                    <a class="song" id="song"></a>
+                    <a class="artist" id="artist" ></a>
+                </div>
+                <div class="bottom">
+                    <video controls="" _autoplay="" name="media" id="song_file"></video>
+                </div>
+            </div>
+        </div>
+        <script src="logic/song_manager.js"></script>
+		<script src="logic/logic.js"></script>
+		<script src="logic/music.js"></script>
+        <script src="logic/profile.js"></script>
+	</body>
+</html>

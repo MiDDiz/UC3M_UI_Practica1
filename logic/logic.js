@@ -1,3 +1,4 @@
+var LastQuerry = null;
 function addHooks() 
 {
 	// namespace for any hook that we need.
@@ -5,9 +6,11 @@ function addHooks()
 		buttons:{
 			sign_in:document.getElementById("sign_in"),
 			log_in:document.getElementById("log_in")
+		},
+		header:{
+			main:document.getElementById("cred-bar")
 		}
 	}
-	console.log("Hooks Attatched")
 	return (hooks);
 }
 
@@ -25,12 +28,223 @@ function addFunctionalities(hooks)
 		document.location.href = "./log_in_form.html";
 		return ;
 	}
+
+	$("#goto-user-lists").click(() => {
+		if (localStorage.getItem("logged") == null)
+		{
+			alert("Tienes que loggearte primero!");
+
+		}else {
+			openPage("../perfil.html");
+		}
+	});
+
+	$("#goto-new-list").click(() => {
+		if (localStorage.getItem("logged") == null)
+		{
+			alert("Tienes que loggearte primero!");
+
+		}else {
+		openPage("../new_list_form.html");
+		}
+	});
+
+	$("#search-bar").keyup(() => {
+		startSearch();
+	})
+}
+
+function dropUserMenu() {
+	document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+	if (!event.target.matches('.usr_img')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+			}
+		}
+	}
+} 
+
+function closeSesion() {
+	// Mostrar ventana modal
+	$( function() {
+		$( "#dialog-message" ).dialog({
+		  modal: true,
+		  buttons: {
+			Ok: function() {
+				localStorage.removeItem("logged")
+				openPage("../index.html")
+			  	$( this ).dialog( "close" );
+			},
+			No: function() {
+				$( this ).dialog( "close" );
+			}
+		  }
+		});
+	  } );
+}
+
+function openPage(site) {
+	document.location.href = site;
+}
+
+function changeHeader(hooks) {
+	usr_img = "../images/usr_image.jpg";
+	console.log("changing header")
+	hooks.header.main.innerHTML = `<button class="usr_img_btn" onclick="dropUserMenu()"><img class="usr_img" src="${usr_img}"></button>
+	<div id="myDropdown" class="dropdown-content">
+		<button onclick="openPage('../account.html')">Cuenta</button>
+		<button onclick="openPage('../perfil.html')">Perfil</button>
+		<button onclick="closeSesion()">Cerrar Sesion</button>
+  	</div>`;
+
+}
+
+function checkForLogin(hooks){
+	// if we are logged in
+	if (localStorage.getItem("logged") != null) {
+		changeHeader(hooks);
+		$(".footer").hide();
+		$(".player").show();
+		$(".search-box-wrapper").show();
+
+		var contador = 0
+		$('.apartado_title').each(function(i, obj) {
+			if (contador == 0){obj.innerHTML = "Tendencias para ti<span class='material-symbols-outlined'>play_arrow"}
+			if (contador == 1){obj.innerHTML = "Novedades para ti<span class='material-symbols-outlined'>play_arrow"}
+			if (contador == 2){obj.innerHTML = "Tus hits latinos<span class='material-symbols-outlined'>play_arrow"}
+			contador += 1;
+
+		});
+
+	}
+	else {
+		// if not hide player and search
+		$(".player").hide();
+		$(".search-box-wrapper").hide();
+	}
 }
 
 function init()
 {
+
 	hooks = addHooks();
 	addFunctionalities(hooks);
-	console.log("hi");
+	generateTimers();
+	checkForLogin(hooks);
+
+	// Hide modal
+	$( "#dialog-message" ).hide();
 }
+
+function startSearch(){
+	// Get input
+
+	var querry = $("#search-bar").val();
+	// If empty querry return site to normal:
+	// Store as last querry
+	LastQuerry = querry;
+	// Get all matching songs
+	var songs = SongMaster.find(querry);
+	// Clear DOM.
+	console.log(songs);
+	$("#master-apartados").html("");
+	// Append elements Fount
+	$("#master-apartados").append(`
+		<div class="apartado">
+		<div class="apartado_title">Resultados: <span class="material-symbols-outlined">play_arrow</span></div>
+			<div class="covers">
+			</div>
+		</div>
+	`)
+	songs.forEach(song => {
+		$(".covers").append(`
+			<div class="container">
+				<img src="${song.cover}">
+				<button class="btn" onclick = "staticChangeSong('${song.cover}',
+																	  '${song.title}',
+																	  '${song.artist}',
+																	  '${song.path}')">
+																	  ► Play</button>
+				<div class="desc">
+					<br>${song.title} 
+					<button class="like-btn" id="like-${song.title}" onclick="liked('${song.title}')">
+						<span class="material-symbols-outlined">
+						favorite
+						</span>
+					</button>
+				</div>
+			</div>
+		`)
+	});
+	$(".covers").append(`
+				<div class="footer-padding"></div>
+				<div class="footer-padding"></div>
+				<div class="footer-padding"></div>
+							`);
+}
+
+
+function liked(title)
+{
+	$("#like-" + `${title}`).css("color", "red");
+	var userCookie = JSON.parse(localStorage.getItem(localStorage.getItem("logged")));
+	var user = new UserData();
+	user.populateFromJSON(userCookie);
+	console.log(userCookie);
+	console.log(user);
+	if (user.alreadyLiked(title))
+		return ;
+	console.log(`Liked: ${title}`);
+	user.appendSong(SongMaster.findByTitle(title));
+	user.saveCookie();
+
+}
+
+/*
+ * Timer function
+*/ 
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds; 
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            start = Date.now() + 1000;
+        }
+    };
+
+    timer();
+    setInterval(timer, 1000);
+}
+/*
+ * Hook each timer to each element.
+*/ 
+function generateTimers(){
+	time1 = document.getElementById('time1');
+	time2 = document.getElementById('time2');
+	time3 = document.getElementById('time3');
+	startTimer(3600, time1);
+	startTimer(2000, time2);
+	startTimer(300, time3);
+}
+
+
 init();

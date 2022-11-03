@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cuenta de Spotifyn't</title>
+	<!-- Estilos propios -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- Icons-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<!-- jquery-->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<!-- jquery ui-->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body>
+	<div id="dialog-message" title="Error al guardar informacion">
+		<p>
+		  <span class="ui-icon ui-icon-circle-cross"></span>
+		  Ha ocurrido un error a la hora de guardar tu información.
+		</p>
+		<p id="error-info">
+		</p>
+	  </div>
+
+	<div class="left-column expanded">
+		<div id="logo">
+			<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
+		</div>
+		<div class="options-wrapper">
+			<!-- Options menu item -->
+			<div class="options-menu" id="goto-user-lists">
+				<!-- Icon --> 
+				<span class="material-symbols-outlined">format_list_bulleted</span>
+				<!-- Text -->
+				<span class="options-text">🔥 Tus listas 🔥 </span>
+			</div>
+			<!-- Options menu item-->
+			<div class="options-menu" id="goto-new-list"> 
+				<span class="material-symbols-outlined">add</span>
+				<span class="options-text">Crea una nueva lista 😎 </span>
+			</div>
+		</div>
+		<div class="policy-wrapper">
+			<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
+			<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 2 </a></div>
+		</div>
+</div>
+<div class="content">
+	<div class="account-wrapper">
+		<div class="account-title">
+			<h1 id="user_header">Cuenta de $USER</h1>
+			<div class="separator"></div>
+		</div>
+		<div class="wrapper-info">
+			<div class="account-information">
+				<ul class="ul-form">
+					<li>Nombre de usuario: <div class="neo-input displayed" id="div_username" contenteditable="false">$USERNAME</div></li>
+					<div class="separator"></div>
+					<li>Contraseña: <div id="div_passwd" class="neo-input hidden-passwd displayed" contenteditable="false" class="hidden-passwd">$PASSWD</div></li>
+					<div class="separator"></div>
+					<li>Correo electronico: <div id="div_email" class="neo-input displayed" contenteditable="false">$EMAIL</div></li>
+					<div class="separator"></div>
+					<li>Nombre: <div id="div_name" class="neo-input displayed" contenteditable="false">$NAME</div></li>
+					<div class="separator"></div>
+					<li>Apellido\s: <div id="div_surname" class="neo-input displayed" contenteditable="false">$surname</div></li>
+					<div class="separator"></div>
+					<li>Fecha de Nacimiento: <div id="div_date" class="neo-input displayed">$date</div></li><button id="btn_date" onclick="showInputDate()" style="display: none">Change date</button>
+					<input type="date" id="form_date" style="display: none;" name="birthday" value="">
+					
+					<div class="separator"></div>
+					<li>URI Foto de Perfil: <div id="div_img" class="neo-input displayed">$img</div></li>
+					<input type="file" id="form_img" style="display: none;" name="usr_img" value="">
+					
+					<div class="separator"></div>
+				</ul>
+			</div>
+			<button id="edit-info" onclick=toggleEdit() class="info-btn">Editar informacion</button>
+			<button id="save-info" onclick=saveEdit() class="info-btn hidden">Guardar informacion</button></div>
+		</div>
+		<div class="backbutton-wrapper">
+			<div class="form-back-button"><a href="index.html">Volver al inicio </a></div>
+		</div>
+	</div>	
+		
+</div>
+
+<script src="logic/userData.js"></script>
+<script src="logic/account.js"></script>
+</body>
+</html>

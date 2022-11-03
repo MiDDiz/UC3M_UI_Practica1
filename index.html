@@ -3,238 +3,221 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Spotifynt</title>
-		<link rel="stylesheet" href="styles/index.css">
+		<!-- Site stylesheet -->
+		<link rel="stylesheet" href="styles/main.css">
+		<!-- Icons -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- jquery-->
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<!-- jquery ui-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	</head>
 	<body>
-		<div class="column">
-				<div id="logo">
-					<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
-				</div>
-				<div class="options-wrapper">
-					<div class="options-menu"> 
-						<span class="material-symbols-outlined">refresh</span>
-						<span class="options-text">Volumen </span>
-					</div>
-					<div class="options-menu"> 
-						<span class="material-symbols-outlined">favorite</span>
-						<span class="options-text">Me gusta </span></div>
-					<div class="options-menu"> 
-						<span class="material-symbols-outlined">close</span>
-						<span class="options-text">Me gusta </span>
-					
-					</div>
-				</div>
-				<div class="policy-wrapper">
-					<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
-					<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 2 </a></div>
-				</div>
+		<!-- Dialog -->
+		<div id="dialog-message" title="Error al guardar informacion">
+			<p>
+			  <span class="ui-icon ui-icon-circle-cross"></span>
+				¿Quieres cerrar sesión?
+			</p>
 		</div>
+		<!-- Left column: menu-->
+		<div class="left-column">
+			<!-- Spotifynt logo-->
+			<div id="logo">
+				<img class="logo-src" src="./images/logo_spoti.png" alt="Logo">
+			</div>
+			<!-- Wrapper for options menú -->
+			<div class="options-wrapper">
+				<!-- Options menu item -->
+				<div class="options-menu" id="goto-user-lists">
+					<!-- Icon --> 
+					<span class="material-symbols-outlined">format_list_bulleted</span>
+					<!-- Text -->
+					<span class="options-text">🔥 Mira tus listas 🔥<br>En tu perfil </span>
+				</div>
+				<!-- Options menu item-->
+				<div class="options-menu" id="goto-new-list"> 
+					<span class="material-symbols-outlined">add</span>
+					<span class="options-text">Crea una nueva lista 😎 </span>
+				</div>
+			</div>
+			<!-- Bottom policy wrapper -->
+			<div class="policy-wrapper">
+				<!-- Policy element -->
+				<div class="policy"><a class="policy-link" href="https://www.google.com">Link privacidad 1 </a></div>
+				<div class="policy"><a class="policy-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link privacidad 2 </a></div>
+			</div>
+		</div>
+		<!-- End of Left column: menu-->
+		<!-- Right column, content-->
 		<div class="content">
-				<div class="wrapper-top">
-					<div id="cred-bar">
-						<button id="sign_in"><div class="sign_button">SIGN IN</div></button>
-						<button id="log_in"><div class="sign_button">LOG IN</div></button>
+			<!-- Top navbar -->
+			<div class="wrapper-top">
+				<div class ="search-box-wrapper">
+					<div class="search-box">
+					  <button class="btn-search"><span class="material-symbols-outlined">search</span></button>
+					  <input id="search-bar" type="text" class="input-search" placeholder="Busca...">
 					</div>
 				</div>
-				<div class="apartados">
-						<div class="apartado">
-							<div class="apartado_title">Tendencias<span class="material-symbols-outlined">play_arrow</span></div>
-							<div class="covers">
-								<div class="container">
-									<img src="images/tendencias/missyou.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/missyou.png',
-																			  'Miss You',
-																			  'Oliver Tree',
-																			  'audio/tendencias/missyou.mp3')">► Play</button>
-									<div class="desc">
-										<br>Miss You
-									</div>
-								  </div>
-									
-								  <div class="container">
-									<img src="images/tendencias/nada.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/nada.png',
-																			  'No Me Digas Nada',
-																			  'Quevedo',
-																			  'audio/tendencias/quevedo.mp3')">► Play</button>
-									<div class="desc">
-										<br>No Me Digas Nada
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/tendencias/bachata.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/bachata.png',
-																			  'La Bachata',
-																			  'Manuel Turizo',
-																			  'audio/tendencias/bachata.mp3')">► Play</button>
-									<div class="desc">
-										<br>La Bachata
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/tendencias/monotonia.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/monotonia.png',
-																			  'Monotonía',
-																			  'Shakira, Ozuna',
-																			  'audio/tendencias/monotonia.mp3')">► Play</button>
-									<div class="desc">
-										<br>Monotonía
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/tendencias/ctangana.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/ctangana.png',
-																			  'Una Y Mil Veces',
-																			  'Omar Montes, C Tangana',
-																			  'audio/tendencias/unaveces.mp3')">► Play</button>
-									<div class="desc">
-										<br>Una Y Mil Veces
-									</div>
-								  </div>
-							</div>
-						</div>
-						<div class="apartado">
-							<div class="apartado_title">Novedades<span class="material-symbols-outlined">play_arrow</span></div>
-							<div class="covers">
-								<div class="container">
-									<img src="images/novedades/aston.jpg">
-									<button class="btn" onclick = "changeSong('images/novedades/aston.jpg',
-																			  'Aston Martin Truck',
-																			  'Roddy Rich',
-																			  'audio/novedades/aston.mp3')">► Play</button>
-									<div class="desc">
-										<br>Aston Martin Truck
-									</div>
-								  </div>
-									
-								  <div class="container">
-									<img src="images/novedades/thecar.jpg">
-									<button class="btn" onclick = "changeSong('images/novedades/thecar.jpg',
-																			  'The Car',
-																			  'Arctic Monkeys',
-																			  'audio/novedades/car.mp3')">► Play</button>
-									<div class="desc">
-										<br>The Car
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/novedades/midnights.jpg">
-									<button class="btn" onclick = "changeSong('images/novedades/midnights.jpg',
-																			  'Lavender Haze',
-																			  'Taylor Swift',
-																			  'audio/novedades/lavender.mp3')">► Play</button>
-									<div class="desc">
-										<br>Lavender Haze
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/novedades/bagordie.jpg">
-									<button class="btn" onclick = "changeSong('images/novedades/bagordie.jpg',
-																			  'bag or die',
-																			  'bbno$',
-																			  'audio/novedades/bagordie.mp3')">► Play</button>
-									<div class="desc">
-										<br>bag or die
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/novedades/meghan.jpg">
-									<button class="btn" onclick = "changeSong('images/novedades/meghan.jpg',
-																			  'Takin It Back',
-																			  'Meghan Trainor',
-																			  'audio/novedades/meghan.mp3')">► Play</button>
-									<div class="desc">
-										<br>Takin' It Back
-									</div>
-								  </div>
-							</div>
-						</div>
-						<div class="apartado">
-							<div class="apartado_title">Hits Latinos<span class="material-symbols-outlined">play_arrow</span></div>
-							<div class="covers">
-								<div class="container">
-									<img src="images/tendencias/monotonia.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/monotonia.png',
-																			  'Monotonía',
-																			  'Shakira, Ozuna',
-																			  'audio/tendencias/monotonia.mp3')">► Play</button>
-									<div class="desc">
-										<br>Monotonia
-									</div>
-								  </div>
-									
-								  <div class="container">
-									<img src="images/latin/despecha.png">
-									<button class="btn" onclick = "changeSong('images/latin/despecha.png',
-																			  'DESPECHÁ',
-																			  'Rosalía',
-																			  'audio/latin/despecha.mp3')">► Play</button>
-									<div class="desc">
-										<br>DESPECHÁ
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/latin/gatubela.png">
-									<button class="btn" onclick = "changeSong('images/latin/gatubela.png',
-																			  'GATUBELA',
-																			  'KAROL G, Maldy',
-																			  'audio/latin/gatubela.mp3')">► Play</button>
-									<div class="desc">
-										<br>GATUBELA
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/latin/chachos.png">
-									<button class="btn" onclick = "changeSong('images/latin/chachos.png',
-																			  'Los Chachos',
-																			  'Piso 21, Manuel Turizo',
-																			  'audio/latin/chachos.mp3')">► Play</button>
-									<div class="desc">
-										<br>Los Chachos
-									</div>
-								  </div>
-								  <div class="container">
-									<img src="images/tendencias/bachata.png">
-									<button class="btn" onclick = "changeSong('images/tendencias/bachata.png',
-																			  'La Bachata',
-																			  'Manuel Turizo',
-																			  'audio/tendencias/bachata.mp3')">► Play</button>
-									<div class="desc">
-										<br>La Bachata
-									</div>
-								  </div>
-							</div>
-							<div class="footer-padding"></div>
-							<div class="footer-padding"></div>
-							<div class="footer-padding"></div>
-
-						</div>
-				
+				<div id="cred-bar">
+					<button id="sign_in"><div class="sign_button">SIGN IN</div></button>
+					<button id="log_in"><div class="sign_button">LOG IN</div></button>
+				</div>
 			</div>
+			<div class="apartados" id="master-apartados">
+				<div class="apartado">
+					<div class="apartado_title">Tendencias<span class="material-symbols-outlined">play_arrow</span> <span class="timer" id="time2"></span></div>
+					<div class="covers">
+						<div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e025b1bff1152ef6d402c9b75a8">
+							<button class="btn" onclick = "changeSong(20)">► Play</button>
+							<div class="desc">
+								<br>Miss You
+							</div>
+						  </div>
+							
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e02f0031372a77c80ba720c5f45">
+							<button class="btn" onclick = "changeSong(21)">► Play</button>
+							<div class="desc">
+								<br>No Me Digas Nada
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e02c9f744b0d62da795bc21d04a">
+							<button class="btn" onclick = "changeSong(22)">► Play</button>
+							<div class="desc">
+								<br>La Bachata
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e0227b5b57343431306a7f9daec">
+							<button class="btn" onclick = "changeSong(19)">► Play</button>
+							<div class="desc">
+								<br>Monotonía
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e024b500117f7e330da4ed5e520">
+							<button class="btn" onclick = "changeSong(23)">► Play</button>
+							<div class="desc">
+								<br>Una Y Mil Veces
+							</div>
+						  </div>
+					</div>
+				</div>
+				<div class="apartado">
+					<div class="apartado_title">Novedades<span class="material-symbols-outlined">play_arrow</span><span class="timer" id="time1"></span></div>
+					<div class="covers">
+						<div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e027494051a39409e94bd45c06c">
+							<button class="btn" onclick = "changeSong(24)">► Play</button>
+							<div class="desc">
+								<br>Aston Martin Truck
+							</div>
+						  </div>
+							
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e0207823ee6237208c835802663">
+							<button class="btn" onclick = "changeSong(25)">► Play</button>
+							<div class="desc">
+								<br>The Car
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e02bb54dde68cd23e2a268ae0f5">
+							<button class="btn" onclick = "changeSong(26)">► Play</button>
+							<div class="desc">
+								<br>Lavender Haze
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e02d8b52e640a1a6ea619f1dc6e">
+							<button class="btn" onclick = "changeSong(27)">► Play</button>
+							<div class="desc">
+								<br>bag or die
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e021a4f1ada93881da4ca8060ff">
+							<button class="btn" onclick = "changeSong(28)">► Play</button>
+							<div class="desc">
+								<br>Takin' It Back
+							</div>
+						  </div>
+					</div>
+				</div>
+				<div class="apartado">
+					<div class="apartado_title">Hits Latinos<span class="material-symbols-outlined">play_arrow</span><span class="timer" id="time3"></span></div>
+					<div class="covers">
+						<div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e0227b5b57343431306a7f9daec">
+							<button class="btn" onclick = "changeSong(19)">► Play</button>
+							<div class="desc">
+								<br>Monotonia
+							</div>
+						  </div>
+							
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e028f072024e0358fc5c62eba41">
+							<button class="btn" onclick = "changeSong(16)">► Play</button>
+							<div class="desc">
+								<br>DESPECHÁ
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e02c2e05d426c037a71556c9f14">
+							<button class="btn" onclick = "changeSong(17)">► Play</button>
+							<div class="desc">
+								<br>GATUBELA
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e0238541f13c5b5519554feda1c">
+							<button class="btn" onclick = "changeSong(15)">► Play</button>
+							<div class="desc">
+								<br>Los Chachos
+							</div>
+						  </div>
+						  <div class="container">
+							<img src="https://i.scdn.co/image/ab67616d00001e02c9f744b0d62da795bc21d04a">
+							<button class="btn" onclick = "changeSong(18)">► Play</button>
+							<div class="desc">
+								<br>La Bachata
+							</div>
+						  </div>
+					</div>
+					<div class="footer-padding"></div>
+					<div class="footer-padding"></div>
+					<div class="footer-padding"></div>
+
+				</div>
 		
-
-		</div>
-
-
-			
-	<div class="player">
-		<div class="left">
-			<img src="./images/def.png" alt="Portada del álbum" id="cover_art">
-		</div>
-		<div class="right">
-		   <div class="top">
-				<a class="song" id="song"></a>
-				<a class="artist" id="artist" ></a>
-			</div>
-			<div class="bottom">
-				<video controls="" _autoplay="" name="media" id="song_file"></video>
 			</div>
 		</div>
-	</div>
 
-	
+		<div class="footer" id="footer">
+			<div class="footer-msg">Nuevos usuarios, recuerden: El beat con el sing-it suena mas fit 🔥</div>
+		</div>
+
+		<div class="player">
+			<div class="left">
+				<img src="https://cdn-icons-png.flaticon.com/512/0/375.png" alt="Portada del álbum" id="cover_art">
+			</div>
+			<div class="right">
+			   <div class="top">
+					<a class="song" id="song"></a>
+					<a class="artist" id="artist" ></a>
+				</div>
+				<div class="bottom">
+					<video controls="" _autoplay="" name="media" id="song_file"></video>
+				</div>
+			</div>
+		</div>
+		<script src="logic/userData.js"></script>
+		<script src="logic/music.js"></script>
 		<script src="logic/logic.js"></script>
-		<script src="logic/play.js"></script>
 	</body>
 </html>
